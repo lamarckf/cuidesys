@@ -1,31 +1,29 @@
 /********************************************************************************
-** Form generated from reading UI file 'janelalogin.ui'
+** Form generated from reading UI file 'fn_login.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.1.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_JANELALOGIN_H
-#define UI_JANELALOGIN_H
+#ifndef UI_FN_LOGIN_H
+#define UI_FN_LOGIN_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_JanelaLogin
+class Ui_fn_login
 {
 public:
-    QWidget *centralwidget;
-    QVBoxLayout *verticalLayout_5;
+    QGridLayout *gridLayout;
     QLabel *label_4;
     QVBoxLayout *verticalLayout_4;
     QVBoxLayout *verticalLayout;
@@ -38,37 +36,33 @@ public:
     QPushButton *btn_login;
     QPushButton *btn_limpar;
     QLabel *label;
-    QStatusBar *statusbar;
 
-    void setupUi(QMainWindow *JanelaLogin)
+    void setupUi(QDialog *fn_login)
     {
-        if (JanelaLogin->objectName().isEmpty())
-            JanelaLogin->setObjectName(QString::fromUtf8("JanelaLogin"));
-        JanelaLogin->resize(800, 600);
-        JanelaLogin->setMinimumSize(QSize(0, 600));
-        centralwidget = new QWidget(JanelaLogin);
-        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        verticalLayout_5 = new QVBoxLayout(centralwidget);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        label_4 = new QLabel(centralwidget);
+        if (fn_login->objectName().isEmpty())
+            fn_login->setObjectName(QString::fromUtf8("fn_login"));
+        fn_login->resize(400, 300);
+        gridLayout = new QGridLayout(fn_login);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        label_4 = new QLabel(fn_login);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         QFont font;
         font.setPointSize(35);
         label_4->setFont(font);
         label_4->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_5->addWidget(label_4);
+        gridLayout->addWidget(label_4, 0, 0, 1, 1);
 
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label_2 = new QLabel(centralwidget);
+        label_2 = new QLabel(fn_login);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         verticalLayout->addWidget(label_2);
 
-        textUSer = new QLineEdit(centralwidget);
+        textUSer = new QLineEdit(fn_login);
         textUSer->setObjectName(QString::fromUtf8("textUSer"));
 
         verticalLayout->addWidget(textUSer);
@@ -78,12 +72,12 @@ public:
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        label_3 = new QLabel(centralwidget);
+        label_3 = new QLabel(fn_login);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         verticalLayout_2->addWidget(label_3);
 
-        textPass = new QLineEdit(centralwidget);
+        textPass = new QLineEdit(fn_login);
         textPass->setObjectName(QString::fromUtf8("textPass"));
         textPass->setEchoMode(QLineEdit::Password);
 
@@ -94,12 +88,12 @@ public:
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        btn_login = new QPushButton(centralwidget);
+        btn_login = new QPushButton(fn_login);
         btn_login->setObjectName(QString::fromUtf8("btn_login"));
 
         verticalLayout_3->addWidget(btn_login);
 
-        btn_limpar = new QPushButton(centralwidget);
+        btn_limpar = new QPushButton(fn_login);
         btn_limpar->setObjectName(QString::fromUtf8("btn_limpar"));
 
         verticalLayout_3->addWidget(btn_limpar);
@@ -108,40 +102,36 @@ public:
         verticalLayout_4->addLayout(verticalLayout_3);
 
 
-        verticalLayout_5->addLayout(verticalLayout_4);
+        gridLayout->addLayout(verticalLayout_4, 1, 0, 1, 1);
 
-        label = new QLabel(centralwidget);
+        label = new QLabel(fn_login);
         label->setObjectName(QString::fromUtf8("label"));
 
-        verticalLayout_5->addWidget(label);
+        gridLayout->addWidget(label, 2, 0, 1, 1);
 
-        JanelaLogin->setCentralWidget(centralwidget);
-        statusbar = new QStatusBar(JanelaLogin);
-        statusbar->setObjectName(QString::fromUtf8("statusbar"));
-        JanelaLogin->setStatusBar(statusbar);
 
-        retranslateUi(JanelaLogin);
+        retranslateUi(fn_login);
 
-        QMetaObject::connectSlotsByName(JanelaLogin);
+        QMetaObject::connectSlotsByName(fn_login);
     } // setupUi
 
-    void retranslateUi(QMainWindow *JanelaLogin)
+    void retranslateUi(QDialog *fn_login)
     {
-        JanelaLogin->setWindowTitle(QCoreApplication::translate("JanelaLogin", "JanelaLogin", nullptr));
-        label_4->setText(QCoreApplication::translate("JanelaLogin", "Login", nullptr));
-        label_2->setText(QCoreApplication::translate("JanelaLogin", "Nome do usu\303\241rio:", nullptr));
-        label_3->setText(QCoreApplication::translate("JanelaLogin", "Senha:", nullptr));
-        btn_login->setText(QCoreApplication::translate("JanelaLogin", "Entrar", nullptr));
-        btn_limpar->setText(QCoreApplication::translate("JanelaLogin", "Limpar", nullptr));
-        label->setText(QCoreApplication::translate("JanelaLogin", "[+] Status", nullptr));
+        fn_login->setWindowTitle(QCoreApplication::translate("fn_login", "Dialog", nullptr));
+        label_4->setText(QCoreApplication::translate("fn_login", "Login", nullptr));
+        label_2->setText(QCoreApplication::translate("fn_login", "Nome do usu\303\241rio:", nullptr));
+        label_3->setText(QCoreApplication::translate("fn_login", "Senha:", nullptr));
+        btn_login->setText(QCoreApplication::translate("fn_login", "Entrar", nullptr));
+        btn_limpar->setText(QCoreApplication::translate("fn_login", "Limpar", nullptr));
+        label->setText(QCoreApplication::translate("fn_login", "[+] Status", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class JanelaLogin: public Ui_JanelaLogin {};
+    class fn_login: public Ui_fn_login {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_JANELALOGIN_H
+#endif // UI_FN_LOGIN_H

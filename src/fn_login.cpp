@@ -1,9 +1,9 @@
-#include "janelalogin.h"
-#include "ui_janelalogin.h"
+#include "fn_login.h"
+#include "ui_fn_login.h"
 
-JanelaLogin::JanelaLogin(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::JanelaLogin)
+fn_login::fn_login(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::fn_login)
 {
     ui->setupUi(this);
     bancoDeDados=QSqlDatabase::addDatabase("QSQLITE");
@@ -21,25 +21,16 @@ JanelaLogin::JanelaLogin(QWidget *parent)
     {
         ui->label->setText("{!} DataBase file doesnot exist");
     }
-
 }
 
-JanelaLogin::~JanelaLogin()
+fn_login::~fn_login()
 {
     delete ui;
     qDebug()<<"Closing the connection to Database file on exit";
     bancoDeDados.close();
 }
 
-
-void JanelaLogin::on_btn_limpar_clicked()
-{
-    ui->textUSer->setText("");
-    ui->textPass->setText("");
-}
-
-
-void JanelaLogin::on_btn_login_clicked()
+void fn_login::on_btn_login_clicked()
 {
     QString username, password;
     username = ui->textUSer->text();
@@ -51,7 +42,7 @@ void JanelaLogin::on_btn_login_clicked()
     }
     ui->label->setText("[+] passou1");
     QSqlQuery qry;
-    if(qry.exec("SELECT user, password, role FROM tb_user WHERE user==\'" + username + "\' AND password==\'" + password +"\'" ))
+    if(qry.exec("SELECT user, password FROM tb_user WHERE user==\'" + username + "\' AND password==\'" + password +"\'" ))
     {
         ui->label->setText("[+] passou2");
         if(qry.next())
@@ -59,15 +50,22 @@ void JanelaLogin::on_btn_login_clicked()
             ui->label->setText("[+] Valid Username ans Password");
             ui->textUSer->setText("");
             ui->textPass->setText("");
-            this->hide();
-            janela=new janelaInicial(this);
-            janela->show();
-
+            this->close();
+            fn_principal fn_principal;
+            fn_principal.setModal(true);
+            fn_principal.exec();
         }
         else
         {
             ui->label->setText("[-] Wrong USername or Password");
         }
     }
+}
+
+
+void fn_login::on_btn_limpar_clicked()
+{
+    ui->textUSer->setText("");
+    ui->textPass->setText("");
 }
 

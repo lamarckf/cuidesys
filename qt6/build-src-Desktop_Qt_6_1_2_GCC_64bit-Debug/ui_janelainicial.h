@@ -1,0 +1,68 @@
+/********************************************************************************
+** Form generated from reading UI file 'janelainicial.ui'
+**
+** Created by: Qt User Interface Compiler version 6.1.2
+**
+** WARNING! All changes made in this file will be lost when recompiling UI file!
+********************************************************************************/
+
+#ifndef UI_JANELAINICIAL_H
+#define UI_JANELAINICIAL_H
+
+#include <QtCore/QVariant>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QWidget>
+
+QT_BEGIN_NAMESPACE
+
+class Ui_janelaInicial
+{
+public:
+    QWidget *centralwidget;
+    QPushButton *bt_Cadasto;
+    QMenuBar *menubar;
+    QStatusBar *statusbar;
+
+    void setupUi(QMainWindow *janelaInicial)
+    {
+        if (janelaInicial->objectName().isEmpty())
+            janelaInicial->setObjectName(QString::fromUtf8("janelaInicial"));
+        janelaInicial->resize(800, 600);
+        centralwidget = new QWidget(janelaInicial);
+        centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        bt_Cadasto = new QPushButton(centralwidget);
+        bt_Cadasto->setObjectName(QString::fromUtf8("bt_Cadasto"));
+        bt_Cadasto->setGeometry(QRect(300, 100, 89, 25));
+        janelaInicial->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(janelaInicial);
+        menubar->setObjectName(QString::fromUtf8("menubar"));
+        menubar->setGeometry(QRect(0, 0, 800, 22));
+        janelaInicial->setMenuBar(menubar);
+        statusbar = new QStatusBar(janelaInicial);
+        statusbar->setObjectName(QString::fromUtf8("statusbar"));
+        janelaInicial->setStatusBar(statusbar);
+
+        retranslateUi(janelaInicial);
+
+        QMetaObject::connectSlotsByName(janelaInicial);
+    } // setupUi
+
+    void retranslateUi(QMainWindow *janelaInicial)
+    {
+        janelaInicial->setWindowTitle(QCoreApplication::translate("janelaInicial", "MainWindow", nullptr));
+        bt_Cadasto->setText(QCoreApplication::translate("janelaInicial", "Cadastro", nullptr));
+    } // retranslateUi
+
+};
+
+namespace Ui {
+    class janelaInicial: public Ui_janelaInicial {};
+} // namespace Ui
+
+QT_END_NAMESPACE
+
+#endif // UI_JANELAINICIAL_H
