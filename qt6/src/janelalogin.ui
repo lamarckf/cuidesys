@@ -20,8 +20,8 @@
    <string>JanelaLogin</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
      <widget class="QLabel" name="label_4">
       <property name="font">
        <font>
@@ -36,7 +36,7 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item>
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -80,6 +80,13 @@
          </widget>
         </item>
         <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>Cadastro</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="btn_limpar">
           <property name="text">
            <string>Limpar</string>
@@ -90,14 +97,8 @@
       </item>
      </layout>
     </item>
-    <item row="2" column="0">
+    <item>
      <widget class="QLabel" name="label">
-      <property name="frameShape">
-       <enum>QFrame::Box</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
       <property name="text">
        <string>[+] Status</string>
       </property>

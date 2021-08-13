@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -26,7 +25,7 @@ class Ui_JanelaLogin
 {
 public:
     QWidget *centralwidget;
-    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_5;
     QLabel *label_4;
     QVBoxLayout *verticalLayout_4;
     QVBoxLayout *verticalLayout;
@@ -37,6 +36,7 @@ public:
     QLineEdit *textPass;
     QVBoxLayout *verticalLayout_3;
     QPushButton *btn_login;
+    QPushButton *pushButton;
     QPushButton *btn_limpar;
     QLabel *label;
     QStatusBar *statusbar;
@@ -49,8 +49,8 @@ public:
         JanelaLogin->setMinimumSize(QSize(0, 600));
         centralwidget = new QWidget(JanelaLogin);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        gridLayout = new QGridLayout(centralwidget);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        verticalLayout_5 = new QVBoxLayout(centralwidget);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         QFont font;
@@ -58,7 +58,7 @@ public:
         label_4->setFont(font);
         label_4->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(label_4, 0, 0, 1, 1);
+        verticalLayout_5->addWidget(label_4);
 
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
@@ -100,6 +100,11 @@ public:
 
         verticalLayout_3->addWidget(btn_login);
 
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        verticalLayout_3->addWidget(pushButton);
+
         btn_limpar = new QPushButton(centralwidget);
         btn_limpar->setObjectName(QString::fromUtf8("btn_limpar"));
 
@@ -109,14 +114,12 @@ public:
         verticalLayout_4->addLayout(verticalLayout_3);
 
 
-        gridLayout->addLayout(verticalLayout_4, 1, 0, 1, 1);
+        verticalLayout_5->addLayout(verticalLayout_4);
 
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setFrameShape(QFrame::Box);
-        label->setFrameShadow(QFrame::Raised);
 
-        gridLayout->addWidget(label, 2, 0, 1, 1);
+        verticalLayout_5->addWidget(label);
 
         JanelaLogin->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(JanelaLogin);
@@ -135,6 +138,7 @@ public:
         label_2->setText(QCoreApplication::translate("JanelaLogin", "Nome do usu\303\241rio:", nullptr));
         label_3->setText(QCoreApplication::translate("JanelaLogin", "Senha:", nullptr));
         btn_login->setText(QCoreApplication::translate("JanelaLogin", "Entrar", nullptr));
+        pushButton->setText(QCoreApplication::translate("JanelaLogin", "Cadastro", nullptr));
         btn_limpar->setText(QCoreApplication::translate("JanelaLogin", "Limpar", nullptr));
         label->setText(QCoreApplication::translate("JanelaLogin", "[+] Status", nullptr));
     } // retranslateUi

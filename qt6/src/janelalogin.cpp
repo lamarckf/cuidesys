@@ -7,8 +7,8 @@ JanelaLogin::JanelaLogin(QWidget *parent)
 {
     ui->setupUi(this);
     bancoDeDados=QSqlDatabase::addDatabase("QSQLITE");
-    bancoDeDados.setDatabaseName("./data");
-    QFileInfo checkFile("./data");
+    bancoDeDados.setDatabaseName("/home/letrus/Documents/cuidesys/qt6/src/data");
+    QFileInfo checkFile("/home/letrus/Documents/cuidesys/qt6/src/data");
 
     if(checkFile.isFile())
     {
@@ -51,9 +51,7 @@ void JanelaLogin::on_btn_login_clicked()
     }
     ui->label->setText("[+] passou1");
     QSqlQuery qry;
-    bool teste = qry.exec("SELECT user, password FROM tb_user WHERE user=\'" + username + "\' AND password=\'" + password +"\'" );
-    qDebug()<<teste;
-    if(teste)
+    if(qry.exec("SELECT user, password, role FROM tb_user WHERE user==\'" + username + "\' AND password==\'" + password +"\'" ))
     {
         ui->label->setText("[+] passou2");
         if(qry.next())
