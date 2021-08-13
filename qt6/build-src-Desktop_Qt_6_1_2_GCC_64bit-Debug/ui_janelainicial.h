@@ -11,8 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -25,7 +25,8 @@ public:
     QWidget *centralwidget;
     QPushButton *bt_admin;
     QPushButton *bt_logout;
-    QMenuBar *menubar;
+    QLabel *label;
+    QLabel *label_4;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *janelaInicial)
@@ -37,15 +38,21 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         bt_admin = new QPushButton(centralwidget);
         bt_admin->setObjectName(QString::fromUtf8("bt_admin"));
-        bt_admin->setGeometry(QRect(200, 100, 291, 25));
+        bt_admin->setGeometry(QRect(250, 140, 291, 25));
         bt_logout = new QPushButton(centralwidget);
         bt_logout->setObjectName(QString::fromUtf8("bt_logout"));
         bt_logout->setGeometry(QRect(670, 10, 89, 25));
+        label = new QLabel(centralwidget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(340, 60, 67, 19));
+        label_4 = new QLabel(centralwidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(110, 10, 541, 141));
+        QFont font;
+        font.setPointSize(35);
+        label_4->setFont(font);
+        label_4->setAlignment(Qt::AlignCenter);
         janelaInicial->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(janelaInicial);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
-        janelaInicial->setMenuBar(menubar);
         statusbar = new QStatusBar(janelaInicial);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         janelaInicial->setStatusBar(statusbar);
@@ -60,6 +67,8 @@ public:
         janelaInicial->setWindowTitle(QCoreApplication::translate("janelaInicial", "MainWindow", nullptr));
         bt_admin->setText(QCoreApplication::translate("janelaInicial", "Gerir Administradores", nullptr));
         bt_logout->setText(QCoreApplication::translate("janelaInicial", "Logout", nullptr));
+        label->setText(QString());
+        label_4->setText(QCoreApplication::translate("janelaInicial", "CuideSys", nullptr));
     } // retranslateUi
 
 };

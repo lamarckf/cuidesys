@@ -1,12 +1,13 @@
 #include "janelainicial.h"
 #include "ui_janelainicial.h"
 
-janelaInicial::janelaInicial(QWidget *parent) :
+janelaInicial::janelaInicial(QWidget *parent, QSqlDatabase* bd) :
     QMainWindow(parent),
     ui(new Ui::janelaInicial)
 {
     ui->setupUi(this);
-    janela = parent;
+    janelaParent = parent;
+    bancoDeDados = bd;
 }
 
 janelaInicial::~janelaInicial()
@@ -16,21 +17,19 @@ janelaInicial::~janelaInicial()
 
 void janelaInicial::on_bt_logout_clicked()
 {
-    janela->show();
+    janelaParent->show();
     this->close();
+    delete this;
 }
 
 
-void janelaInicial::on_bt_Cadasto_clicked()
-{
-
-}
 
 
 void janelaInicial::on_bt_admin_clicked()
 {
     this->hide();
-    janela=new gerirAdm(this);
-    janela->show();
+    janelaGerir = new gerirAdm(this, bancoDeDados);
+    janelaGerir->show();
+
 }
 

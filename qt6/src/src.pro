@@ -9,17 +9,26 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    cadadm.cpp \
+    editadm.cpp \
+    excluadm.cpp \
     geriradm.cpp \
     janelainicial.cpp \
     main.cpp \
     janelalogin.cpp
 
 HEADERS += \
+    cadadm.h \
+    editadm.h \
+    excluadm.h \
     geriradm.h \
     janelainicial.h \
     janelalogin.h
 
 FORMS += \
+    cadadm.ui \
+    editadm.ui \
+    excluadm.ui \
     geriradm.ui \
     janelainicial.ui \
     janelalogin.ui
