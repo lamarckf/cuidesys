@@ -24,6 +24,7 @@ class Ui_janelaInicial
 public:
     QWidget *centralwidget;
     QPushButton *bt_Cadasto;
+    QPushButton *bt_logout;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -37,6 +38,9 @@ public:
         bt_Cadasto = new QPushButton(centralwidget);
         bt_Cadasto->setObjectName(QString::fromUtf8("bt_Cadasto"));
         bt_Cadasto->setGeometry(QRect(300, 100, 89, 25));
+        bt_logout = new QPushButton(centralwidget);
+        bt_logout->setObjectName(QString::fromUtf8("bt_logout"));
+        bt_logout->setGeometry(QRect(670, 10, 89, 25));
         janelaInicial->setCentralWidget(centralwidget);
         menubar = new QMenuBar(janelaInicial);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -55,6 +59,7 @@ public:
     {
         janelaInicial->setWindowTitle(QCoreApplication::translate("janelaInicial", "MainWindow", nullptr));
         bt_Cadasto->setText(QCoreApplication::translate("janelaInicial", "Cadastro", nullptr));
+        bt_logout->setText(QCoreApplication::translate("janelaInicial", "Logout", nullptr));
     } // retranslateUi
 
 };
