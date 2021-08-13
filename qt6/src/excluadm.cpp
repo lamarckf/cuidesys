@@ -1,8 +1,13 @@
 #include "excluadm.h"
 #include "ui_excluadm.h"
 
+/*
+    Exclui Admin
+    Classe responsavel pelas interfaces de exclusão dos usuaros
+*/
 
-ExcluAdm::ExcluAdm(QWidget *parent,  QSqlDatabase *bd) :
+
+ExcluAdm::ExcluAdm(QWidget *parent,  QSqlDatabase *bd) :  //construtor da classe
     QMainWindow(parent),
     ui(new Ui::ExcluAdm)
 {
@@ -13,13 +18,13 @@ ExcluAdm::ExcluAdm(QWidget *parent,  QSqlDatabase *bd) :
     ui->resultLabel->setText("");
 }
 
-ExcluAdm::~ExcluAdm()
+ExcluAdm::~ExcluAdm() // Destrutor
 {
     delete ui;
 }
 
 
-void ExcluAdm::on_pushButton_2_clicked()
+void ExcluAdm::on_pushButton_2_clicked() // Inicializador da janela de exclusao de admin
 {
     janelaParent->show();
     this->close();
@@ -27,10 +32,8 @@ void ExcluAdm::on_pushButton_2_clicked()
 }
 
 
-void ExcluAdm::on_pushButton_clicked()
+void ExcluAdm::on_pushButton_clicked() // Exlusao do de Adm
 {
-
-
 
     //CONFERINDO CONEXÃO
     if(!bancoDeDados->isOpen())
@@ -62,7 +65,7 @@ void ExcluAdm::on_pushButton_clicked()
 }
 
 
-void ExcluAdm::refreshComboBox(){
+void ExcluAdm::refreshComboBox(){ //Atualizaçao do label
 
     ui->admComboBox->clear();
 

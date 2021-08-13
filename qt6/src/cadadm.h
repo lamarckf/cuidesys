@@ -4,6 +4,10 @@
 #include <QMainWindow>
 #include <QtSql>
 
+/*
+classe responsavel pela interface do cadastro dos adms
+*/
+
 namespace Ui {
 class CadAdm;
 }
@@ -13,15 +17,15 @@ class CadAdm : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit CadAdm(QWidget *parent = nullptr, QSqlDatabase *bd = nullptr);
-    ~CadAdm();
+    explicit CadAdm(QWidget *parent = nullptr, QSqlDatabase *bd = nullptr); //  construtor
+    ~CadAdm(); // destrtutor
 
-private slots:
+private slots: // Metodos de eventos(Botões)
     void on_pushButton_2_clicked();
 
     void on_pushButton_clicked();
 
-private:
+private: // Atributos
     Ui::CadAdm *ui;
 
     QSqlDatabase *bancoDeDados;

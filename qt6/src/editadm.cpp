@@ -1,7 +1,11 @@
 #include "editadm.h"
 #include "ui_editadm.h"
 
-EditAdm::EditAdm(QWidget *parent,  QSqlDatabase *bd) :
+/*
+    Classe responsavel pela atualizaçao de dados do admin
+*/
+
+EditAdm::EditAdm(QWidget *parent,  QSqlDatabase *bd) :  // construtor com passagem por lista
     QMainWindow(parent),
     ui(new Ui::EditAdm)
 {
@@ -12,12 +16,12 @@ EditAdm::EditAdm(QWidget *parent,  QSqlDatabase *bd) :
     ui->resultLabel->setText("");
 }
 
-EditAdm::~EditAdm()
+EditAdm::~EditAdm() // Destrutor
 {
     delete ui;
 }
 
-void EditAdm::on_pushButton_2_clicked()
+void EditAdm::on_pushButton_2_clicked() // inicializaador da janela de atualização de dados do admin
 {
     janelaParent->show();
     this->close();
@@ -25,7 +29,7 @@ void EditAdm::on_pushButton_2_clicked()
 }
 
 
-void EditAdm::refreshComboBox(){
+void EditAdm::refreshComboBox(){ //Atualização da listagem
 
     ui->admComboBox->clear();
 
@@ -41,7 +45,7 @@ void EditAdm::refreshComboBox(){
 
     //SQL QUERY
     QSqlQuery qry;
-    if(qry.exec("SELECT userName FROM tb_adm "))
+    if(qry.exec("SELECT userName FROM tb_adm ")) // Requisição de dados apartir do BD
     {
 
         while(qry.next())
@@ -59,7 +63,7 @@ void EditAdm::refreshComboBox(){
 }
 
 
-void EditAdm::on_pushButton_clicked()
+void EditAdm::on_pushButton_clicked() // Atualizando dados de adm
 {
     QString nomeUsr, senha, ender;
     nomeUsr = ui->lineNome->text();

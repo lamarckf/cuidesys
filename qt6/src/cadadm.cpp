@@ -3,7 +3,11 @@
 #include <iostream>
 using namespace std;
 
-CadAdm::CadAdm(QWidget *parent,  QSqlDatabase *bd) :
+/*
+classe responsavel pela interface do cadastro dos adms
+*/
+
+CadAdm::CadAdm(QWidget *parent,  QSqlDatabase *bd) :  // Construtor com passagem de por lista
     QMainWindow(parent),
     ui(new Ui::CadAdm)
 {
@@ -13,12 +17,12 @@ CadAdm::CadAdm(QWidget *parent,  QSqlDatabase *bd) :
     ui->resultLabel->setText("");
 }
 
-CadAdm::~CadAdm()
+CadAdm::~CadAdm()  // Destrutor
 {
     delete ui;
 }
 
-void CadAdm::on_pushButton_2_clicked()
+void CadAdm::on_pushButton_2_clicked() //// inicilizador da janela filha
 {
     janelaParent->show();
     this->close();
@@ -26,14 +30,14 @@ void CadAdm::on_pushButton_2_clicked()
 }
 
 
-void CadAdm::on_pushButton_clicked()
+void CadAdm::on_pushButton_clicked() // Cadastrando novo usuarioa
 {
     QString nomeUsr, senha, ender;
     nomeUsr = ui->lineNome->text();
     senha = ui->lineSenha->text();
     ender = ui->lineEnd->text();
 
-    //Coferindo campos
+                                                                                 //validando os campos
     if( nomeUsr.length() == 0  || senha.length() == 0 || ender.length() == 0 ){
         ui->resultLabel->setText("Todos os campos devem ser preenchidos");
         return;

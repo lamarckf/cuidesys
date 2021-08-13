@@ -7,6 +7,9 @@
 
 #include "geriradm.h"
 
+/*
+    Classe resposavel pela interface do ambiente do usuario logado
+*/
 
 namespace Ui {
 class janelaInicial;
@@ -17,15 +20,15 @@ class janelaInicial : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit janelaInicial(QWidget *parent = nullptr, QSqlDatabase *bd = nullptr);
-    ~janelaInicial();
+    explicit janelaInicial(QWidget *parent = nullptr, QSqlDatabase *bd = nullptr);// Construtor da classe
+    ~janelaInicial();  // Destrutor da classe
 
-private slots:
+private slots:  // Metodos
     void on_bt_logout_clicked();
 
     void on_bt_admin_clicked();
 
-private:
+private: // Atributos
     Ui::janelaInicial *ui;
 
     QSqlDatabase *bancoDeDados;

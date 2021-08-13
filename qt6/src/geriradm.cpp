@@ -1,6 +1,11 @@
 #include "geriradm.h"
 #include "ui_geriradm.h"
 
+/*
+    Classe responsavel pela gerenciamento de usuarios
+*/
+
+
 gerirAdm::gerirAdm(QWidget *parent,  QSqlDatabase *bd) :
     QMainWindow(parent),
     ui(new Ui::gerirAdm)
@@ -10,12 +15,12 @@ gerirAdm::gerirAdm(QWidget *parent,  QSqlDatabase *bd) :
     bancoDeDados = bd;
 }
 
-gerirAdm::~gerirAdm()
+gerirAdm::~gerirAdm() //destrutor
 {
     delete ui;
 }
 
-void gerirAdm::on_pushButton_4_clicked()
+void gerirAdm::on_pushButton_4_clicked()//inicalzador da janela de gerencia de usuarios
 {
 
     janelaParent->show();
@@ -24,7 +29,7 @@ void gerirAdm::on_pushButton_4_clicked()
 }
 
 
-void gerirAdm::on_pushButton_clicked()
+void gerirAdm::on_pushButton_clicked() // Inicializador da janela de cadastro
 {
     this->hide();
     janelaCadAdm = new CadAdm(this, bancoDeDados);
@@ -32,7 +37,7 @@ void gerirAdm::on_pushButton_clicked()
 }
 
 
-void gerirAdm::on_pushButton_2_clicked()
+void gerirAdm::on_pushButton_2_clicked()  // // Inicializador da janela de edição de admin
 {
     this->hide();
     janelaEditAdm = new EditAdm(this, bancoDeDados);
@@ -40,7 +45,7 @@ void gerirAdm::on_pushButton_2_clicked()
 }
 
 
-void gerirAdm::on_pushButton_3_clicked()
+void gerirAdm::on_pushButton_3_clicked()  // Inicializador da janela de exclusao de admin
 {
     this->hide();
     janelaExcluAdm = new ExcluAdm(this, bancoDeDados);

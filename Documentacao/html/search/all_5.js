@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['janelainicial_426',['janelaInicial',['../classjanela_inicial.html',1,'janelaInicial'],['../classjanela_inicial.html#a0df59e512f6b09a86a30ba422da003d4',1,'janelaInicial::janelaInicial()'],['../class_ui_1_1janela_inicial.html',1,'Ui::janelaInicial']]],
-  ['janelainicial_2ecpp_427',['janelainicial.cpp',['../janelainicial_8cpp.html',1,'']]],
-  ['janelainicial_2eh_428',['janelainicial.h',['../janelainicial_8h.html',1,'']]],
-  ['janelalogin_429',['JanelaLogin',['../class_janela_login.html',1,'JanelaLogin'],['../class_janela_login.html#a0a86e694857f9ba87ddeb433945749b3',1,'JanelaLogin::JanelaLogin()'],['../class_ui_1_1_janela_login.html',1,'Ui::JanelaLogin']]],
-  ['janelalogin_2ecpp_430',['janelalogin.cpp',['../janelalogin_8cpp.html',1,'']]],
-  ['janelalogin_2eh_431',['janelalogin.h',['../janelalogin_8h.html',1,'']]]
+  ['geriradm_456',['gerirAdm',['../classgerir_adm.html',1,'gerirAdm'],['../classgerir_adm.html#a17c2e941a6b9186a8cb9f136f21e3f35',1,'gerirAdm::gerirAdm()'],['../class_ui_1_1gerir_adm.html',1,'Ui::gerirAdm']]],
+  ['geriradm_2ecpp_457',['geriradm.cpp',['../geriradm_8cpp.html',1,'']]],
+  ['geriradm_2eh_458',['geriradm.h',['../geriradm_8h.html',1,'']]],
+  ['gridlayout_459',['gridLayout',['../class_ui___cad_adm.html#ad4bcb2b72c41dd6b11598da4726ab1a3',1,'Ui_CadAdm::gridLayout()'],['../class_ui___edit_adm.html#a7f0436fa3ecd56ac5ffe1e0595ed5daa',1,'Ui_EditAdm::gridLayout()'],['../class_ui__gerir_adm.html#a9e2fc250726b8fed823ea17906ad3f11',1,'Ui_gerirAdm::gridLayout()']]]
 ];

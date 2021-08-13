@@ -8,6 +8,11 @@
 #include "excluadm.h"
 
 
+/*
+    Classe responsavel pela gerencia de usuarios
+*/
+
+
 namespace Ui {
 class gerirAdm;
 }
@@ -17,10 +22,10 @@ class gerirAdm : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit gerirAdm(QWidget *parent = nullptr,  QSqlDatabase *bd = nullptr);
-    ~gerirAdm();
+    explicit gerirAdm(QWidget *parent = nullptr,  QSqlDatabase *bd = nullptr); // construtor
+    ~gerirAdm(); // destrutor
 
-private slots:
+private slots: // Metodos de eventos
     void on_pushButton_4_clicked();
 
     void on_pushButton_clicked();
@@ -29,7 +34,7 @@ private slots:
 
     void on_pushButton_3_clicked();
 
-private:
+private: // Atributos
     Ui::gerirAdm *ui;
 
     QSqlDatabase *bancoDeDados;

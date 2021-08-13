@@ -4,6 +4,12 @@
 #include <QLocale>
 #include <QTranslator>
 
+/**
+    Main file
+  * Arquivo de execção inicial
+*/
+
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -17,7 +23,7 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    JanelaLogin w;
+    JanelaLogin w;  /* Instanciação e inicialização da janela de  login */
     w.show();
     return a.exec();
 }

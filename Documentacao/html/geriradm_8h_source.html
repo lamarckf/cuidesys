@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cuideSys: qt6/src/geriradm.h Source File</title>
+<title>Documentação: qt6/src/geriradm.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">cuideSys
+   <div id="projectname">Documentação
    </div>
   </td>
  </tr>
@@ -79,47 +79,52 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="excluadm_8h.html">excluadm.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_ui.html">Ui</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="classgerir_adm.html">gerirAdm</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">    Classe responsavel pela gerencia de usuarios</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classgerir_adm.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgerir_adm.html">gerirAdm</a> : <span class="keyword">public</span> QMainWindow</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classgerir_adm.html#a17c2e941a6b9186a8cb9f136f21e3f35">gerirAdm</a>(QWidget *parent = <span class="keyword">nullptr</span>,  QSqlDatabase *bd = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classgerir_adm.html#abf56e5c2817c146b38c4bd39720f3387">~gerirAdm</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> on_pushButton_4_clicked();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> on_pushButton_clicked();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_ui.html">Ui</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">class </span><a class="code" href="classgerir_adm.html">gerirAdm</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classgerir_adm.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgerir_adm.html">gerirAdm</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classgerir_adm.html#a17c2e941a6b9186a8cb9f136f21e3f35">gerirAdm</a>(QWidget *parent = <span class="keyword">nullptr</span>,  QSqlDatabase *bd = <span class="keyword">nullptr</span>); <span class="comment">// construtor</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classgerir_adm.html#abf56e5c2817c146b38c4bd39720f3387">~gerirAdm</a>(); <span class="comment">// destrutor</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> on_pushButton_2_clicked();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> on_pushButton_3_clicked();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_ui_1_1gerir_adm.html">Ui::gerirAdm</a> *ui;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span> slots: <span class="comment">// Metodos de eventos</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> on_pushButton_4_clicked();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> on_pushButton_clicked();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> on_pushButton_2_clicked();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    QSqlDatabase *bancoDeDados;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> on_pushButton_3_clicked();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    QWidget *janelaParent;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_cad_adm.html">CadAdm</a> *janelaCadAdm;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_edit_adm.html">EditAdm</a> *janelaEditAdm;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_exclu_adm.html">ExcluAdm</a> *janelaExcluAdm;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GERIRADM_H</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>: <span class="comment">// Atributos</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_ui_1_1gerir_adm.html">Ui::gerirAdm</a> *ui;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    QSqlDatabase *bancoDeDados;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    QWidget *janelaParent;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_cad_adm.html">CadAdm</a> *janelaCadAdm;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_edit_adm.html">EditAdm</a> *janelaEditAdm;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_exclu_adm.html">ExcluAdm</a> *janelaExcluAdm;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GERIRADM_H</span></div>
 <div class="ttc" id="acadadm_8h_html"><div class="ttname"><a href="cadadm_8h.html">cadadm.h</a></div></div>
-<div class="ttc" id="aclass_cad_adm_html"><div class="ttname"><a href="class_cad_adm.html">CadAdm</a></div><div class="ttdef"><b>Definition:</b> cadadm.h:12</div></div>
-<div class="ttc" id="aclass_edit_adm_html"><div class="ttname"><a href="class_edit_adm.html">EditAdm</a></div><div class="ttdef"><b>Definition:</b> editadm.h:12</div></div>
-<div class="ttc" id="aclass_exclu_adm_html"><div class="ttname"><a href="class_exclu_adm.html">ExcluAdm</a></div><div class="ttdef"><b>Definition:</b> excluadm.h:12</div></div>
+<div class="ttc" id="aclass_cad_adm_html"><div class="ttname"><a href="class_cad_adm.html">CadAdm</a></div><div class="ttdef"><b>Definition:</b> cadadm.h:16</div></div>
+<div class="ttc" id="aclass_edit_adm_html"><div class="ttname"><a href="class_edit_adm.html">EditAdm</a></div><div class="ttdef"><b>Definition:</b> editadm.h:16</div></div>
+<div class="ttc" id="aclass_exclu_adm_html"><div class="ttname"><a href="class_exclu_adm.html">ExcluAdm</a></div><div class="ttdef"><b>Definition:</b> excluadm.h:19</div></div>
 <div class="ttc" id="aclass_ui_1_1gerir_adm_html"><div class="ttname"><a href="class_ui_1_1gerir_adm.html">Ui::gerirAdm</a></div><div class="ttdef"><b>Definition:</b> ui_geriradm.h:97</div></div>
-<div class="ttc" id="aclassgerir_adm_html"><div class="ttname"><a href="classgerir_adm.html">gerirAdm</a></div><div class="ttdef"><b>Definition:</b> geriradm.h:16</div></div>
-<div class="ttc" id="aclassgerir_adm_html_a17c2e941a6b9186a8cb9f136f21e3f35"><div class="ttname"><a href="classgerir_adm.html#a17c2e941a6b9186a8cb9f136f21e3f35">gerirAdm::gerirAdm</a></div><div class="ttdeci">gerirAdm(QWidget *parent=nullptr, QSqlDatabase *bd=nullptr)</div><div class="ttdef"><b>Definition:</b> geriradm.cpp:4</div></div>
-<div class="ttc" id="aclassgerir_adm_html_abf56e5c2817c146b38c4bd39720f3387"><div class="ttname"><a href="classgerir_adm.html#abf56e5c2817c146b38c4bd39720f3387">gerirAdm::~gerirAdm</a></div><div class="ttdeci">~gerirAdm()</div><div class="ttdef"><b>Definition:</b> geriradm.cpp:13</div></div>
+<div class="ttc" id="aclassgerir_adm_html"><div class="ttname"><a href="classgerir_adm.html">gerirAdm</a></div><div class="ttdef"><b>Definition:</b> geriradm.h:21</div></div>
+<div class="ttc" id="aclassgerir_adm_html_a17c2e941a6b9186a8cb9f136f21e3f35"><div class="ttname"><a href="classgerir_adm.html#a17c2e941a6b9186a8cb9f136f21e3f35">gerirAdm::gerirAdm</a></div><div class="ttdeci">gerirAdm(QWidget *parent=nullptr, QSqlDatabase *bd=nullptr)</div><div class="ttdef"><b>Definition:</b> geriradm.cpp:9</div></div>
+<div class="ttc" id="aclassgerir_adm_html_abf56e5c2817c146b38c4bd39720f3387"><div class="ttname"><a href="classgerir_adm.html#abf56e5c2817c146b38c4bd39720f3387">gerirAdm::~gerirAdm</a></div><div class="ttdeci">~gerirAdm()</div><div class="ttdef"><b>Definition:</b> geriradm.cpp:18</div></div>
 <div class="ttc" id="aeditadm_8h_html"><div class="ttname"><a href="editadm_8h.html">editadm.h</a></div></div>
 <div class="ttc" id="aexcluadm_8h_html"><div class="ttname"><a href="excluadm_8h.html">excluadm.h</a></div></div>
 <div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> ui_cadadm.h:161</div></div>

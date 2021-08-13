@@ -8,6 +8,12 @@
 #include <QMessageBox>
 #include "janelainicial.h"
 
+/*
+ * Classe Responsavel pela interface da tela de login
+ *
+ *
+ */
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class JanelaLogin; }
 QT_END_NAMESPACE
@@ -17,15 +23,15 @@ class JanelaLogin : public QMainWindow
     Q_OBJECT
 
 public:
-    JanelaLogin(QWidget *parent = nullptr);
-    ~JanelaLogin();
+    JanelaLogin(QWidget *parent = nullptr); // construtor da classe
+    ~JanelaLogin(); // destrutor
 
-private slots:
+private slots: //Metdos de eventos
     void on_btn_limpar_clicked();
 
     void on_btn_login_clicked();
 
-private:
+private: //Atributos
     Ui::JanelaLogin *ui;
     QSqlDatabase bancoDeDados;
     janelaInicial *janela;
