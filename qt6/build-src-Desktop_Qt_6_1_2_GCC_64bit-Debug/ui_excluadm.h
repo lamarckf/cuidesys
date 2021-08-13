@@ -11,11 +11,11 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -31,10 +31,8 @@ public:
     QVBoxLayout *verticalLayout_5;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
-    QWidget *widget;
-    QVBoxLayout *verticalLayout;
+    QComboBox *admComboBox;
     QLabel *label_5;
-    QSpinBox *spinBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -47,10 +45,10 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         resultLabel = new QLabel(centralwidget);
         resultLabel->setObjectName(QString::fromUtf8("resultLabel"));
-        resultLabel->setGeometry(QRect(80, 30, 641, 19));
+        resultLabel->setGeometry(QRect(70, 40, 641, 19));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(70, 150, 631, 111));
+        layoutWidget->setGeometry(QRect(70, 140, 631, 141));
         verticalLayout_5 = new QVBoxLayout(layoutWidget);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -68,25 +66,15 @@ public:
 
         verticalLayout_5->addWidget(pushButton_2);
 
-        widget = new QWidget(centralwidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(70, 80, 631, 56));
-        verticalLayout = new QVBoxLayout(widget);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_5 = new QLabel(widget);
+        admComboBox = new QComboBox(centralwidget);
+        admComboBox->setObjectName(QString::fromUtf8("admComboBox"));
+        admComboBox->setGeometry(QRect(70, 100, 629, 27));
+        label_5 = new QLabel(centralwidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(70, 68, 629, 26));
         QFont font1;
         font1.setPointSize(12);
         label_5->setFont(font1);
-
-        verticalLayout->addWidget(label_5);
-
-        spinBox = new QSpinBox(widget);
-        spinBox->setObjectName(QString::fromUtf8("spinBox"));
-
-        verticalLayout->addWidget(spinBox);
-
         ExcluAdm->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ExcluAdm);
         menubar->setObjectName(QString::fromUtf8("menubar"));

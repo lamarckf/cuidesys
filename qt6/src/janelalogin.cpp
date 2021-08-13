@@ -7,10 +7,10 @@ JanelaLogin::JanelaLogin(QWidget *parent)
 {
     ui->setupUi(this);
     bancoDeDados=QSqlDatabase::addDatabase("QSQLITE");
-     bancoDeDados.setDatabaseName("/home/letrus/Documents/cuidesys/qt6/src/data");
-     QFileInfo checkFile("/home/letrus/Documents/cuidesys/qt6/src/data");
-    //bancoDeDados.setDatabaseName("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
-    //QFileInfo checkFile("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
+    //bancoDeDados.setDatabaseName("/home/letrus/Documents/cuidesys/qt6/src/data");
+    //QFileInfo checkFile("/home/letrus/Documents/cuidesys/qt6/src/data");
+    bancoDeDados.setDatabaseName("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
+    QFileInfo checkFile("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
 
     if(checkFile.isFile())
     {

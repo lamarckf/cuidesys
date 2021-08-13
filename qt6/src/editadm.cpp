@@ -8,6 +8,8 @@ EditAdm::EditAdm(QWidget *parent,  QSqlDatabase *bd) :
     ui->setupUi(this);
     janelaParent = parent;
     bancoDeDados = bd;
+    refreshComboBox();
+    ui->resultLabel->setText("");
 }
 
 EditAdm::~EditAdm()
@@ -20,5 +22,88 @@ void EditAdm::on_pushButton_2_clicked()
     janelaParent->show();
     this->close();
     delete this;
+}
+
+
+void EditAdm::refreshComboBox(){
+
+    ui->admComboBox->clear();
+
+    //CONFERINDO CONEXÃO
+    if(!bancoDeDados->isOpen())
+    {
+        //ERRO MSG CONEXÃO
+        ui->resultLabel->setText("Não foi possivel estabelecer conexão com bando de dados.");
+        return;
+    }
+
+
+
+    //SQL QUERY
+    QSqlQuery qry;
+    if(qry.exec("SELECT userName FROM tb_adm "))
+    {
+
+        while(qry.next())
+        {
+
+            QString result = qry.value(0).toString();
+            ui->admComboBox->addItem(result);
+
+        }
+    }
+    else { ui->resultLabel->setText("Não foi possivel estabelecer conexão com bando de dados."); }
+
+
+
+}
+
+
+void EditAdm::on_pushButton_clicked()
+{
+    QString nomeUsr, senha, ender;
+    nomeUsr = ui->lineNome->text();
+    senha = ui->lineSenha->text();
+    ender = ui->lineEnd->text();
+
+    //Coferindo campos
+    if( nomeUsr.length() == 0  || senha.length() == 0 || ender.length() == 0 ){
+        ui->resultLabel->setText("Todos os campos devem ser preenchidos");
+        return;
+    }
+
+
+    //CONFERINDO CONEXÃO
+    if(!bancoDeDados->isOpen())
+    {
+        //ERRO MSG CONEXÃO
+        ui->resultLabel->setText("Não foi possivel estabelecer conexão com bando de dados.");
+        return;
+    }
+
+    //SQL QUERY
+    QString actual = ui->admComboBox->currentText();
+    QSqlQuery qry;
+    if(qry.exec("SELECT * FROM tb_adm WHERE userName=\'" + actual + "\'"))
+    {
+
+        if(qry.next())
+        {
+            //qry.exec("INSERT INTO tb_adm (userName, password, address) VALUES ( \'" + nomeUsr + "\', \'" + senha + "\',   \'" + ender + "\' )")
+            qry.exec("UPDATE tb_adm SET userName= \'" + nomeUsr + "\', password= \'" + senha
+                     + "\', address= \'" + ender + "\' WHERE userName=\'" + actual + "\'");
+            ui->resultLabel->setText("Atualizado Com sucesso !!");
+        }
+
+        else{ ui->resultLabel->setText("Não possivel Atualizar."); }
+
+    }
+    else { ui->resultLabel->setText("Não foi possivel estabelecer conexão com bando de dados."); }
+
+
+    ui->lineNome->setText("");
+    ui->lineSenha->setText("");
+    ui->lineEnd->setText("");
+    refreshComboBox();
 }
 

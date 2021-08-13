@@ -11,13 +11,13 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -34,7 +34,7 @@ public:
     QVBoxLayout *verticalLayout_4;
     QVBoxLayout *verticalLayout;
     QLabel *label_5;
-    QSpinBox *spinBox;
+    QComboBox *admComboBox;
     QLabel *label;
     QLineEdit *lineNome;
     QVBoxLayout *verticalLayout_2;
@@ -77,10 +77,10 @@ public:
 
         verticalLayout->addWidget(label_5);
 
-        spinBox = new QSpinBox(layoutWidget);
-        spinBox->setObjectName(QString::fromUtf8("spinBox"));
+        admComboBox = new QComboBox(layoutWidget);
+        admComboBox->setObjectName(QString::fromUtf8("admComboBox"));
 
-        verticalLayout->addWidget(spinBox);
+        verticalLayout->addWidget(admComboBox);
 
         label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));

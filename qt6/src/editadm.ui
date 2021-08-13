@@ -54,7 +54,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox"/>
+          <widget class="QComboBox" name="admComboBox"/>
          </item>
          <item>
           <widget class="QLabel" name="label">
