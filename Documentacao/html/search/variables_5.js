@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['offsetsandsize_588',['offsetsAndSize',['../structqt__meta__stringdata___cad_adm__t.html#abd40d26e38fbcdeb0ddbaf07f530f518',1,'qt_meta_stringdata_CadAdm_t::offsetsAndSize()'],['../structqt__meta__stringdata___edit_adm__t.html#aebd09dfb1e18165c88d40634e6ea8740',1,'qt_meta_stringdata_EditAdm_t::offsetsAndSize()'],['../structqt__meta__stringdata___exclu_adm__t.html#aa1f83ca7581fee3019c1af781ba9b885',1,'qt_meta_stringdata_ExcluAdm_t::offsetsAndSize()'],['../structqt__meta__stringdata__gerir_adm__t.html#af0d4c8a2e235ec9ca43918c786c0d6aa',1,'qt_meta_stringdata_gerirAdm_t::offsetsAndSize()'],['../structqt__meta__stringdata__janela_inicial__t.html#af382c755988f1f73ef1a416ce88b25bb',1,'qt_meta_stringdata_janelaInicial_t::offsetsAndSize()'],['../structqt__meta__stringdata___janela_login__t.html#a66c9b88346fd722b767464e66610678f',1,'qt_meta_stringdata_JanelaLogin_t::offsetsAndSize()']]]
+];
