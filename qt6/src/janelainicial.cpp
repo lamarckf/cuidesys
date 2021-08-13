@@ -20,3 +20,17 @@ void janelaInicial::on_bt_logout_clicked()
     this->close();
 }
 
+
+void janelaInicial::on_bt_Cadasto_clicked()
+{
+
+}
+
+
+void janelaInicial::on_bt_admin_clicked()
+{
+    this->hide();
+    janela=new gerirAdm(this);
+    janela->show();
+}
+

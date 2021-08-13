@@ -14,17 +14,17 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="bt_Cadasto">
+   <widget class="QPushButton" name="bt_admin">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>200</x>
       <y>100</y>
-      <width>89</width>
+      <width>291</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>Cadastro</string>
+     <string>Gerir Administradores</string>
     </property>
    </widget>
    <widget class="QPushButton" name="bt_logout">

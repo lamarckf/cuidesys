@@ -23,7 +23,7 @@ class Ui_janelaInicial
 {
 public:
     QWidget *centralwidget;
-    QPushButton *bt_Cadasto;
+    QPushButton *bt_admin;
     QPushButton *bt_logout;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -35,9 +35,9 @@ public:
         janelaInicial->resize(800, 600);
         centralwidget = new QWidget(janelaInicial);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        bt_Cadasto = new QPushButton(centralwidget);
-        bt_Cadasto->setObjectName(QString::fromUtf8("bt_Cadasto"));
-        bt_Cadasto->setGeometry(QRect(300, 100, 89, 25));
+        bt_admin = new QPushButton(centralwidget);
+        bt_admin->setObjectName(QString::fromUtf8("bt_admin"));
+        bt_admin->setGeometry(QRect(200, 100, 291, 25));
         bt_logout = new QPushButton(centralwidget);
         bt_logout->setObjectName(QString::fromUtf8("bt_logout"));
         bt_logout->setGeometry(QRect(670, 10, 89, 25));
@@ -58,7 +58,7 @@ public:
     void retranslateUi(QMainWindow *janelaInicial)
     {
         janelaInicial->setWindowTitle(QCoreApplication::translate("janelaInicial", "MainWindow", nullptr));
-        bt_Cadasto->setText(QCoreApplication::translate("janelaInicial", "Cadastro", nullptr));
+        bt_admin->setText(QCoreApplication::translate("janelaInicial", "Gerir Administradores", nullptr));
         bt_logout->setText(QCoreApplication::translate("janelaInicial", "Logout", nullptr));
     } // retranslateUi
 

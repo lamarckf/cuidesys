@@ -9,15 +9,18 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    geriradm.cpp \
     janelainicial.cpp \
     main.cpp \
     janelalogin.cpp
 
 HEADERS += \
+    geriradm.h \
     janelainicial.h \
     janelalogin.h
 
 FORMS += \
+    geriradm.ui \
     janelainicial.ui \
     janelalogin.ui
 
