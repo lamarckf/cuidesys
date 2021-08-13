@@ -7,10 +7,10 @@ JanelaLogin::JanelaLogin(QWidget *parent)
 {
     ui->setupUi(this);
     bancoDeDados=QSqlDatabase::addDatabase("QSQLITE");
-    // bancoDeDados.setDatabaseName("/home/letrus/Documents/cuidesys/qt6/src/data");
-    // QFileInfo checkFile("/home/letrus/Documents/cuidesys/qt6/src/data");
-    bancoDeDados.setDatabaseName("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
-    QFileInfo checkFile("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
+     bancoDeDados.setDatabaseName("/home/letrus/Documents/cuidesys/qt6/src/data");
+     QFileInfo checkFile("/home/letrus/Documents/cuidesys/qt6/src/data");
+    //bancoDeDados.setDatabaseName("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
+    //QFileInfo checkFile("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
 
     if(checkFile.isFile())
     {
@@ -51,14 +51,16 @@ void JanelaLogin::on_btn_login_clicked()
         qDebug()<<"No conection to DataBase";
         return;
     }
-    ui->label->setText("[+] passou1");
     QSqlQuery qry;
-    if(qry.exec("SELECT user, password, role FROM tb_user WHERE user==\'" + username + "\' AND password==\'" + password +"\'" ))
+    bool teste =qry.exec("SELECT userName, password FROM tb_adm WHERE userName==\'" + username + "\' AND password==\'" + password +"\'" );
+    qDebug()<<qry.boundValues();
+    qDebug()<<teste;
+    if(teste)
     {
         ui->label->setText("[+] passou2");
         if(qry.next())
         {
-            ui->label->setText("[+] Valid Username ans Password");
+            ui->label->setText("[+] Status");
             ui->textUSer->setText("");
             ui->textPass->setText("");
             this->hide();
@@ -68,7 +70,7 @@ void JanelaLogin::on_btn_login_clicked()
         }
         else
         {
-            ui->label->setText("[-] Wrong USername or Password");
+            ui->label->setText("[-] Wrong Username or Password");
         }
     }
 }
