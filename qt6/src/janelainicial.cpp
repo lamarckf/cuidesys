@@ -31,8 +31,18 @@ void janelaInicial::on_bt_logout_clicked() // incializador da janela filha
 void janelaInicial::on_bt_admin_clicked() // Inicializador da jenale de gerencia da dos adms
 {
     this->hide();
-    janelaGerir = new gerirAdm(this, bancoDeDados);
-    janelaGerir->show();
+    janelaGerirAdm = new gerirAdm(this, bancoDeDados);
+    janelaGerirAdm->show();
 
 }
+
+
+void janelaInicial::on_bt_estoque_clicked()
+{
+    this->hide();
+    janelaGerirEstoque = new GerirEstoque(this, bancoDeDados);
+    janelaGerirEstoque->show();
+}
+
+
 

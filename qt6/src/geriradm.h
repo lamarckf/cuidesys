@@ -35,13 +35,26 @@ private slots: // Metodos de eventos
     void on_pushButton_3_clicked();
 
 private: // Atributos
+
+   /*
+    * Referencia para os componentes da interface grafica
+    */
     Ui::gerirAdm *ui;
 
+    /*
+     * Referencia para conexao com o banco de dados
+     */
     QSqlDatabase *bancoDeDados;
 
+    /*
+     * Referencia para janela criadora
+     */
     QWidget *janelaParent;
+
     CadAdm *janelaCadAdm;
+
     EditAdm *janelaEditAdm;
+
     ExcluAdm *janelaExcluAdm;
 };
 

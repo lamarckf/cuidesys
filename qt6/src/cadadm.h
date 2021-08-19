@@ -21,16 +21,23 @@ public:
     ~CadAdm(); // destrtutor
 
 private slots: // Metodos de eventos(Botões)
-    void on_pushButton_2_clicked();
 
-    void on_pushButton_clicked();
+    void on_bt_voltar_clicked();
+
+    void on_bt_confirmar_clicked();
 
 private: // Atributos
     Ui::CadAdm *ui;
 
+    /*
+    * Referencia para conexao com o banco de dados
+    */
     QSqlDatabase *bancoDeDados;
 
-    QWidget * janelaParent;
+   /*
+    * Referencia para janela criadora
+    */
+    QWidget *janelaParent;
 };
 
 #endif // CADADM_H

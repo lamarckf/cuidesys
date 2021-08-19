@@ -27,11 +27,19 @@ private slots:  //Metodos de eventos (clique)
     void on_pushButton_clicked();
 
 private: // Atributos
+
+
     Ui::EditAdm *ui;
 
+    /*
+    * Referencia para conexao com o banco de dados
+    */
     QSqlDatabase *bancoDeDados;
 
-    QWidget * janelaParent;
+   /*
+    * Referencia para janela criadora
+    */
+    QWidget *janelaParent;
 };
 
 #endif // EDITADM_H

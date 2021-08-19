@@ -22,7 +22,7 @@ CadAdm::~CadAdm()  // Destrutor
     delete ui;
 }
 
-void CadAdm::on_pushButton_2_clicked() //// inicilizador da janela filha
+void CadAdm::on_bt_voltar_clicked()//// inicilizador da janela filha
 {
     janelaParent->show();
     this->close();
@@ -30,7 +30,7 @@ void CadAdm::on_pushButton_2_clicked() //// inicilizador da janela filha
 }
 
 
-void CadAdm::on_pushButton_clicked() // Cadastrando novo usuarioa
+void CadAdm::on_bt_confirmar_clicked() // Cadastrando novo usuarioa
 {
     QString nomeUsr, senha, ender;
     nomeUsr = ui->lineNome->text();
@@ -78,4 +78,6 @@ void CadAdm::on_pushButton_clicked() // Cadastrando novo usuarioa
     else { ui->resultLabel->setText("Não foi possivel estabelecer conexão com bando de dados."); }
 
 }
+
+
 

@@ -39,8 +39,8 @@ public:
     QLabel *label_3;
     QLineEdit *lineEnd;
     QVBoxLayout *verticalLayout_5;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *bt_confirmar;
+    QPushButton *bt_voltar;
     QLabel *resultLabel;
     QStatusBar *statusbar;
 
@@ -115,19 +115,19 @@ public:
 
         verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        pushButton = new QPushButton(layoutWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        bt_confirmar = new QPushButton(layoutWidget);
+        bt_confirmar->setObjectName(QString::fromUtf8("bt_confirmar"));
         QFont font1;
         font1.setPointSize(14);
-        pushButton->setFont(font1);
+        bt_confirmar->setFont(font1);
 
-        verticalLayout_5->addWidget(pushButton);
+        verticalLayout_5->addWidget(bt_confirmar);
 
-        pushButton_2 = new QPushButton(layoutWidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setFont(font1);
+        bt_voltar = new QPushButton(layoutWidget);
+        bt_voltar->setObjectName(QString::fromUtf8("bt_voltar"));
+        bt_voltar->setFont(font1);
 
-        verticalLayout_5->addWidget(pushButton_2);
+        verticalLayout_5->addWidget(bt_voltar);
 
 
         gridLayout->addLayout(verticalLayout_5, 1, 0, 1, 1);
@@ -151,8 +151,8 @@ public:
         label->setText(QCoreApplication::translate("CadAdm", "Nome de usu\303\241rio", nullptr));
         label_2->setText(QCoreApplication::translate("CadAdm", "Senha", nullptr));
         label_3->setText(QCoreApplication::translate("CadAdm", "Endere\303\247o da loja", nullptr));
-        pushButton->setText(QCoreApplication::translate("CadAdm", "Confirmar", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("CadAdm", "Voltar", nullptr));
+        bt_confirmar->setText(QCoreApplication::translate("CadAdm", "Confirmar", nullptr));
+        bt_voltar->setText(QCoreApplication::translate("CadAdm", "Voltar", nullptr));
         resultLabel->setText(QCoreApplication::translate("CadAdm", "Result Label", nullptr));
     } // retranslateUi
 

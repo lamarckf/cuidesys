@@ -53,30 +53,46 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../src/cadadm.cpp \
+		../src/cadproduto.cpp \
 		../src/editadm.cpp \
+		../src/editproduto.cpp \
 		../src/excluadm.cpp \
+		../src/excluproduto.cpp \
 		../src/geriradm.cpp \
+		../src/gerirestoque.cpp \
 		../src/janelainicial.cpp \
 		../src/main.cpp \
 		../src/janelalogin.cpp qrc_qmake_qmake_qm_files.cpp \
 		moc_cadadm.cpp \
+		moc_cadproduto.cpp \
 		moc_editadm.cpp \
+		moc_editproduto.cpp \
 		moc_excluadm.cpp \
+		moc_excluproduto.cpp \
 		moc_geriradm.cpp \
+		moc_gerirestoque.cpp \
 		moc_janelainicial.cpp \
 		moc_janelalogin.cpp
 OBJECTS       = cadadm.o \
+		cadproduto.o \
 		editadm.o \
+		editproduto.o \
 		excluadm.o \
+		excluproduto.o \
 		geriradm.o \
+		gerirestoque.o \
 		janelainicial.o \
 		main.o \
 		janelalogin.o \
 		qrc_qmake_qmake_qm_files.o \
 		moc_cadadm.o \
+		moc_cadproduto.o \
 		moc_editadm.o \
+		moc_editproduto.o \
 		moc_excluadm.o \
+		moc_excluproduto.o \
 		moc_geriradm.o \
+		moc_gerirestoque.o \
 		moc_janelainicial.o \
 		moc_janelalogin.o
 DIST          = /home/vinicius/Qt/6.1.2/gcc_64/mkspecs/features/spec_pre.prf \
@@ -205,14 +221,22 @@ DIST          = /home/vinicius/Qt/6.1.2/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/features/yacc.prf \
 		/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/features/lex.prf \
 		../src/src.pro ../src/cadadm.h \
+		../src/cadproduto.h \
 		../src/editadm.h \
+		../src/editproduto.h \
 		../src/excluadm.h \
+		../src/excluproduto.h \
 		../src/geriradm.h \
+		../src/gerirestoque.h \
 		../src/janelainicial.h \
 		../src/janelalogin.h ../src/cadadm.cpp \
+		../src/cadproduto.cpp \
 		../src/editadm.cpp \
+		../src/editproduto.cpp \
 		../src/excluadm.cpp \
+		../src/excluproduto.cpp \
 		../src/geriradm.cpp \
+		../src/gerirestoque.cpp \
 		../src/janelainicial.cpp \
 		../src/main.cpp \
 		../src/janelalogin.cpp
@@ -224,7 +248,7 @@ TARGET        = src
 first: all
 ####### Build rules
 
-src: ui_cadadm.h ui_editadm.h ui_excluadm.h ui_geriradm.h ui_janelainicial.h ui_janelalogin.h $(OBJECTS)  
+src: ui_cadadm.h ui_cadproduto.h ui_editadm.h ui_editproduto.h ui_excluadm.h ui_excluproduto.h ui_geriradm.h ui_gerirestoque.h ui_janelainicial.h ui_janelalogin.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../src/src.pro /home/vinicius/Qt/6.1.2/gcc_64/mkspecs/linux-g++/qmake.conf /home/vinicius/Qt/6.1.2/gcc_64/mkspecs/features/spec_pre.prf \
@@ -507,9 +531,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents ../src/src_pt_BR.ts $(DISTDIR)/
 	$(COPY_FILE) --parents qmake_qmake_qm_files.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/vinicius/Qt/6.1.2/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/cadadm.h ../src/editadm.h ../src/excluadm.h ../src/geriradm.h ../src/janelainicial.h ../src/janelalogin.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/cadadm.cpp ../src/editadm.cpp ../src/excluadm.cpp ../src/geriradm.cpp ../src/janelainicial.cpp ../src/main.cpp ../src/janelalogin.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../src/cadadm.ui ../src/editadm.ui ../src/excluadm.ui ../src/geriradm.ui ../src/janelainicial.ui ../src/janelalogin.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/cadadm.h ../src/cadproduto.h ../src/editadm.h ../src/editproduto.h ../src/excluadm.h ../src/excluproduto.h ../src/geriradm.h ../src/gerirestoque.h ../src/janelainicial.h ../src/janelalogin.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/cadadm.cpp ../src/cadproduto.cpp ../src/editadm.cpp ../src/editproduto.cpp ../src/excluadm.cpp ../src/excluproduto.cpp ../src/geriradm.cpp ../src/gerirestoque.cpp ../src/janelainicial.cpp ../src/main.cpp ../src/janelalogin.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../src/cadadm.ui ../src/cadproduto.ui ../src/editadm.ui ../src/editproduto.ui ../src/excluadm.ui ../src/excluproduto.ui ../src/geriradm.ui ../src/gerirestoque.ui ../src/janelainicial.ui ../src/janelalogin.ui $(DISTDIR)/
 	$(COPY_FILE) --parents ../src/src_pt_BR.ts $(DISTDIR)/
 
 
@@ -554,9 +578,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /home/vinicius/Qt/6.1.2/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1z -Wall -Wextra -dM -E -o moc_predefs.h /home/vinicius/Qt/6.1.2/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_cadadm.cpp moc_editadm.cpp moc_excluadm.cpp moc_geriradm.cpp moc_janelainicial.cpp moc_janelalogin.cpp
+compiler_moc_header_make_all: moc_cadadm.cpp moc_cadproduto.cpp moc_editadm.cpp moc_editproduto.cpp moc_excluadm.cpp moc_excluproduto.cpp moc_geriradm.cpp moc_gerirestoque.cpp moc_janelainicial.cpp moc_janelalogin.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_cadadm.cpp moc_editadm.cpp moc_excluadm.cpp moc_geriradm.cpp moc_janelainicial.cpp moc_janelalogin.cpp
+	-$(DEL_FILE) moc_cadadm.cpp moc_cadproduto.cpp moc_editadm.cpp moc_editproduto.cpp moc_excluadm.cpp moc_excluproduto.cpp moc_geriradm.cpp moc_gerirestoque.cpp moc_janelainicial.cpp moc_janelalogin.cpp
 moc_cadadm.cpp: ../src/cadadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -846,6 +870,296 @@ moc_cadadm.cpp: ../src/cadadm.h \
 		moc_predefs.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc
 	/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc $(DEFINES) --include '/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/build-src-Desktop_Qt_6_1_2_GCC_64bit-Debug/moc_predefs.h' -I/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -I'/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src' -I/home/vinicius/Qt/6.1.2/gcc_64/include -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../src/cadadm.h -o moc_cadadm.cpp
+
+moc_cadproduto.cpp: ../src/cadproduto.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlogging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qflags.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmutex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstring.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qchar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpair.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydataops.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanystringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompare.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmath.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qproperty.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyprivate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmargins.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrect.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsize.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpalette.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcolor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgb.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbrush.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qimage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtransform.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qregion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfont.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcursor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbitmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariant.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdebug.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringconverter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qset.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qeventpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvectornd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qscreen.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QObject \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QRect \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSize \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSizeF \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/QTransform \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qicon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSql \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSqlDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCore \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCoreDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qassociativeiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasictimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbitarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbuffer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcalendar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlocale.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatetime.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborcommon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qregularexpression.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/quuid.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcbormap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamreader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfloat16.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamwriter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcollator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdiriterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qendian.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qexception.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileselector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QStringList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrunnable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresultstore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadpool.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthread.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjnienvironment.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QScopedPointer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjniobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsondocument.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibrary.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversionnumber.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlockfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetaobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimetype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qoperatingsystemversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpluginloader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocess.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpromise.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qqueue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrandom.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresource.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsavefile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopeguard.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsettings.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsimd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstack.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimeline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimezone.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtranslator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtransposeproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QDeadlineTimer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qxmlstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriver.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlerror.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlfield.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlindex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleditemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyle.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlistview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlresult.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlversion.h \
+		moc_predefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc
+	/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc $(DEFINES) --include '/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/build-src-Desktop_Qt_6_1_2_GCC_64bit-Debug/moc_predefs.h' -I/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -I'/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src' -I/home/vinicius/Qt/6.1.2/gcc_64/include -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../src/cadproduto.h -o moc_cadproduto.cpp
 
 moc_editadm.cpp: ../src/editadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
@@ -1137,6 +1451,296 @@ moc_editadm.cpp: ../src/editadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc
 	/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc $(DEFINES) --include '/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/build-src-Desktop_Qt_6_1_2_GCC_64bit-Debug/moc_predefs.h' -I/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -I'/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src' -I/home/vinicius/Qt/6.1.2/gcc_64/include -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../src/editadm.h -o moc_editadm.cpp
 
+moc_editproduto.cpp: ../src/editproduto.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlogging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qflags.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmutex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstring.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qchar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpair.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydataops.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanystringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompare.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmath.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qproperty.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyprivate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmargins.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrect.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsize.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpalette.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcolor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgb.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbrush.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qimage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtransform.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qregion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfont.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcursor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbitmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariant.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdebug.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringconverter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qset.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qeventpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvectornd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qscreen.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QObject \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QRect \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSize \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSizeF \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/QTransform \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qicon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSql \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSqlDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCore \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCoreDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qassociativeiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasictimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbitarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbuffer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcalendar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlocale.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatetime.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborcommon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qregularexpression.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/quuid.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcbormap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamreader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfloat16.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamwriter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcollator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdiriterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qendian.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qexception.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileselector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QStringList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrunnable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresultstore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadpool.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthread.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjnienvironment.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QScopedPointer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjniobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsondocument.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibrary.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversionnumber.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlockfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetaobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimetype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qoperatingsystemversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpluginloader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocess.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpromise.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qqueue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrandom.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresource.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsavefile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopeguard.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsettings.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsimd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstack.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimeline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimezone.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtranslator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtransposeproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QDeadlineTimer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qxmlstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriver.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlerror.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlfield.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlindex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleditemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyle.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlistview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlresult.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlversion.h \
+		moc_predefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc
+	/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc $(DEFINES) --include '/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/build-src-Desktop_Qt_6_1_2_GCC_64bit-Debug/moc_predefs.h' -I/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -I'/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src' -I/home/vinicius/Qt/6.1.2/gcc_64/include -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../src/editproduto.h -o moc_editproduto.cpp
+
 moc_excluadm.cpp: ../src/excluadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -1426,6 +2030,296 @@ moc_excluadm.cpp: ../src/excluadm.h \
 		moc_predefs.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc
 	/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc $(DEFINES) --include '/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/build-src-Desktop_Qt_6_1_2_GCC_64bit-Debug/moc_predefs.h' -I/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -I'/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src' -I/home/vinicius/Qt/6.1.2/gcc_64/include -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../src/excluadm.h -o moc_excluadm.cpp
+
+moc_excluproduto.cpp: ../src/excluproduto.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlogging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qflags.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmutex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstring.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qchar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpair.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydataops.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanystringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompare.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmath.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qproperty.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyprivate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmargins.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrect.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsize.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpalette.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcolor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgb.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbrush.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qimage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtransform.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qregion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfont.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcursor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbitmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariant.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdebug.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringconverter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qset.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qeventpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvectornd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qscreen.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QObject \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QRect \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSize \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSizeF \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/QTransform \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qicon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSql \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSqlDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCore \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCoreDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qassociativeiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasictimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbitarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbuffer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcalendar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlocale.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatetime.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborcommon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qregularexpression.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/quuid.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcbormap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamreader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfloat16.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamwriter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcollator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdiriterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qendian.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qexception.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileselector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QStringList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrunnable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresultstore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadpool.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthread.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjnienvironment.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QScopedPointer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjniobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsondocument.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibrary.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversionnumber.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlockfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetaobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimetype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qoperatingsystemversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpluginloader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocess.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpromise.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qqueue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrandom.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresource.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsavefile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopeguard.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsettings.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsimd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstack.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimeline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimezone.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtranslator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtransposeproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QDeadlineTimer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qxmlstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriver.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlerror.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlfield.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlindex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleditemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyle.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlistview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlresult.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlversion.h \
+		moc_predefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc
+	/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc $(DEFINES) --include '/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/build-src-Desktop_Qt_6_1_2_GCC_64bit-Debug/moc_predefs.h' -I/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -I'/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src' -I/home/vinicius/Qt/6.1.2/gcc_64/include -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../src/excluproduto.h -o moc_excluproduto.cpp
 
 moc_geriradm.cpp: ../src/geriradm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
@@ -1720,6 +2614,299 @@ moc_geriradm.cpp: ../src/geriradm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc
 	/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc $(DEFINES) --include '/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/build-src-Desktop_Qt_6_1_2_GCC_64bit-Debug/moc_predefs.h' -I/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -I'/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src' -I/home/vinicius/Qt/6.1.2/gcc_64/include -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../src/geriradm.h -o moc_geriradm.cpp
 
+moc_gerirestoque.cpp: ../src/gerirestoque.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlogging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qflags.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmutex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstring.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qchar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpair.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydataops.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanystringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompare.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmath.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qproperty.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyprivate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmargins.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrect.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsize.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpalette.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcolor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgb.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbrush.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qimage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtransform.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qregion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfont.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcursor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbitmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariant.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdebug.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringconverter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qset.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qeventpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvectornd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qscreen.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QObject \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QRect \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSize \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSizeF \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/QTransform \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qicon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSql \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSqlDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCore \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCoreDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qassociativeiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasictimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbitarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbuffer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcalendar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlocale.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatetime.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborcommon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qregularexpression.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/quuid.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcbormap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamreader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfloat16.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamwriter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcollator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdiriterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qendian.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qexception.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileselector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QStringList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrunnable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresultstore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadpool.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthread.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjnienvironment.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QScopedPointer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjniobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsondocument.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibrary.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversionnumber.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlockfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetaobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimetype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qoperatingsystemversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpluginloader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocess.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpromise.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qqueue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrandom.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresource.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsavefile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopeguard.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsettings.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsimd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstack.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimeline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimezone.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtranslator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtransposeproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QDeadlineTimer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qxmlstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriver.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlerror.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlfield.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlindex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleditemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyle.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlistview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlresult.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlversion.h \
+		../src/cadproduto.h \
+		../src/editproduto.h \
+		../src/excluproduto.h \
+		moc_predefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc
+	/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc $(DEFINES) --include '/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/build-src-Desktop_Qt_6_1_2_GCC_64bit-Debug/moc_predefs.h' -I/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -I'/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src' -I/home/vinicius/Qt/6.1.2/gcc_64/include -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../src/gerirestoque.h -o moc_gerirestoque.cpp
+
 moc_janelainicial.cpp: ../src/janelainicial.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -2011,6 +3198,10 @@ moc_janelainicial.cpp: ../src/janelainicial.h \
 		../src/cadadm.h \
 		../src/editadm.h \
 		../src/excluadm.h \
+		../src/gerirestoque.h \
+		../src/cadproduto.h \
+		../src/editproduto.h \
+		../src/excluproduto.h \
 		moc_predefs.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc
 	/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc $(DEFINES) --include '/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/build-src-Desktop_Qt_6_1_2_GCC_64bit-Debug/moc_predefs.h' -I/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -I'/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src' -I/home/vinicius/Qt/6.1.2/gcc_64/include -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../src/janelainicial.h -o moc_janelainicial.cpp
@@ -2311,6 +3502,10 @@ moc_janelalogin.cpp: ../src/janelalogin.h \
 		../src/cadadm.h \
 		../src/editadm.h \
 		../src/excluadm.h \
+		../src/gerirestoque.h \
+		../src/cadproduto.h \
+		../src/editproduto.h \
+		../src/excluproduto.h \
 		moc_predefs.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc
 	/home/vinicius/Qt/6.1.2/gcc_64/libexec/moc $(DEFINES) --include '/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/build-src-Desktop_Qt_6_1_2_GCC_64bit-Debug/moc_predefs.h' -I/home/vinicius/Qt/6.1.2/gcc_64/mkspecs/linux-g++ -I'/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src' -I/home/vinicius/Qt/6.1.2/gcc_64/include -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql -I/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../src/janelalogin.h -o moc_janelalogin.cpp
@@ -2319,24 +3514,40 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_cadadm.h ui_editadm.h ui_excluadm.h ui_geriradm.h ui_janelainicial.h ui_janelalogin.h
+compiler_uic_make_all: ui_cadadm.h ui_cadproduto.h ui_editadm.h ui_editproduto.h ui_excluadm.h ui_excluproduto.h ui_geriradm.h ui_gerirestoque.h ui_janelainicial.h ui_janelalogin.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_cadadm.h ui_editadm.h ui_excluadm.h ui_geriradm.h ui_janelainicial.h ui_janelalogin.h
+	-$(DEL_FILE) ui_cadadm.h ui_cadproduto.h ui_editadm.h ui_editproduto.h ui_excluadm.h ui_excluproduto.h ui_geriradm.h ui_gerirestoque.h ui_janelainicial.h ui_janelalogin.h
 ui_cadadm.h: ../src/cadadm.ui \
 		/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic
 	/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic ../src/cadadm.ui -o ui_cadadm.h
+
+ui_cadproduto.h: ../src/cadproduto.ui \
+		/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic
+	/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic ../src/cadproduto.ui -o ui_cadproduto.h
 
 ui_editadm.h: ../src/editadm.ui \
 		/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic
 	/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic ../src/editadm.ui -o ui_editadm.h
 
+ui_editproduto.h: ../src/editproduto.ui \
+		/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic
+	/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic ../src/editproduto.ui -o ui_editproduto.h
+
 ui_excluadm.h: ../src/excluadm.ui \
 		/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic
 	/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic ../src/excluadm.ui -o ui_excluadm.h
 
+ui_excluproduto.h: ../src/excluproduto.ui \
+		/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic
+	/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic ../src/excluproduto.ui -o ui_excluproduto.h
+
 ui_geriradm.h: ../src/geriradm.ui \
 		/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic
 	/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic ../src/geriradm.ui -o ui_geriradm.h
+
+ui_gerirestoque.h: ../src/gerirestoque.ui \
+		/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic
+	/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic ../src/gerirestoque.ui -o ui_gerirestoque.h
 
 ui_janelainicial.h: ../src/janelainicial.ui \
 		/home/vinicius/Qt/6.1.2/gcc_64/libexec/uic
@@ -2672,6 +3883,324 @@ cadadm.o: ../src/cadadm.cpp ../src/cadadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cadadm.o ../src/cadadm.cpp
 
+cadproduto.o: ../src/cadproduto.cpp ../src/cadproduto.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlogging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qflags.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmutex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstring.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qchar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpair.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydataops.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanystringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompare.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmath.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qproperty.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyprivate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmargins.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrect.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsize.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpalette.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcolor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgb.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbrush.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qimage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtransform.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qregion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfont.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcursor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbitmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariant.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdebug.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringconverter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qset.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qeventpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvectornd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qscreen.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QObject \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QRect \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSize \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSizeF \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/QTransform \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qicon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSql \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSqlDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCore \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCoreDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qassociativeiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasictimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbitarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbuffer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcalendar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlocale.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatetime.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborcommon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qregularexpression.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/quuid.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcbormap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamreader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfloat16.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamwriter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcollator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdiriterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qendian.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qexception.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileselector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QStringList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrunnable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresultstore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadpool.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthread.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjnienvironment.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QScopedPointer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjniobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsondocument.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibrary.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversionnumber.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlockfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetaobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimetype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qoperatingsystemversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpluginloader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocess.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpromise.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qqueue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrandom.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresource.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsavefile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopeguard.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsettings.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsimd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstack.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimeline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimezone.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtranslator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtransposeproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QDeadlineTimer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qxmlstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriver.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlerror.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlfield.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlindex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleditemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyle.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlistview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlresult.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlversion.h \
+		ui_cadproduto.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QVariant \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QApplication \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qguiapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputmethod.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QGridLayout \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlayout.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QLabel \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlabel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpicture.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtextdocument.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QLineEdit \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlineedit.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtextcursor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtextformat.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpen.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtextoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QSpinBox \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qspinbox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QStatusBar \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QWidget
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cadproduto.o ../src/cadproduto.cpp
+
 editadm.o: ../src/editadm.cpp ../src/editadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -2964,6 +4493,7 @@ editadm.o: ../src/editadm.cpp ../src/editadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qapplication.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qguiapplication.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputmethod.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QComboBox \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QGridLayout \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlayout.h \
@@ -2986,13 +4516,300 @@ editadm.o: ../src/editadm.cpp ../src/editadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QPushButton \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QSpinBox \
-		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qspinbox.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QStatusBar \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstatusbar.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QVBoxLayout \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o editadm.o ../src/editadm.cpp
+
+editproduto.o: ../src/editproduto.cpp ../src/editproduto.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlogging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qflags.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmutex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstring.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qchar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpair.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydataops.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanystringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompare.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmath.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qproperty.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyprivate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmargins.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrect.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsize.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpalette.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcolor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgb.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbrush.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qimage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtransform.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qregion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfont.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcursor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbitmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariant.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdebug.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringconverter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qset.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qeventpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvectornd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qscreen.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QObject \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QRect \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSize \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSizeF \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/QTransform \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qicon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSql \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSqlDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCore \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCoreDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qassociativeiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasictimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbitarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbuffer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcalendar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlocale.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatetime.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborcommon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qregularexpression.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/quuid.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcbormap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamreader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfloat16.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamwriter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcollator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdiriterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qendian.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qexception.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileselector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QStringList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrunnable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresultstore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadpool.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthread.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjnienvironment.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QScopedPointer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjniobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsondocument.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibrary.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversionnumber.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlockfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetaobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimetype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qoperatingsystemversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpluginloader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocess.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpromise.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qqueue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrandom.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresource.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsavefile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopeguard.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsettings.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsimd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstack.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimeline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimezone.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtranslator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtransposeproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QDeadlineTimer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qxmlstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriver.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlerror.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlfield.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlindex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleditemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyle.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlistview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlresult.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlversion.h \
+		ui_editproduto.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o editproduto.o ../src/editproduto.cpp
 
 excluadm.o: ../src/excluadm.cpp ../src/excluadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
@@ -3286,6 +5103,7 @@ excluadm.o: ../src/excluadm.cpp ../src/excluadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qapplication.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qguiapplication.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputmethod.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QComboBox \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QLabel \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlabel.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpicture.h \
@@ -3297,8 +5115,6 @@ excluadm.o: ../src/excluadm.cpp ../src/excluadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QPushButton \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QSpinBox \
-		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qspinbox.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QStatusBar \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstatusbar.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QVBoxLayout \
@@ -3308,6 +5124,295 @@ excluadm.o: ../src/excluadm.cpp ../src/excluadm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o excluadm.o ../src/excluadm.cpp
+
+excluproduto.o: ../src/excluproduto.cpp ../src/excluproduto.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlogging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qflags.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmutex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstring.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qchar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpair.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydataops.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanystringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompare.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmath.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qproperty.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyprivate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmargins.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrect.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsize.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpalette.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcolor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgb.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbrush.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qimage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtransform.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qregion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfont.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcursor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbitmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariant.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdebug.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringconverter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qset.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qeventpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvectornd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qscreen.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QObject \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QRect \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSize \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSizeF \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/QTransform \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qicon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSql \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSqlDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCore \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCoreDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qassociativeiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasictimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbitarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbuffer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcalendar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlocale.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatetime.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborcommon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qregularexpression.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/quuid.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcbormap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamreader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfloat16.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamwriter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcollator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdiriterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qendian.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qexception.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileselector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QStringList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrunnable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresultstore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadpool.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthread.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjnienvironment.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QScopedPointer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjniobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsondocument.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibrary.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversionnumber.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlockfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetaobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimetype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qoperatingsystemversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpluginloader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocess.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpromise.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qqueue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrandom.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresource.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsavefile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopeguard.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsettings.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsimd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstack.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimeline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimezone.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtranslator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtransposeproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QDeadlineTimer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qxmlstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriver.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlerror.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlfield.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlindex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleditemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyle.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlistview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlresult.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlversion.h \
+		ui_excluproduto.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o excluproduto.o ../src/excluproduto.cpp
 
 geriradm.o: ../src/geriradm.cpp ../src/geriradm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
@@ -3622,6 +5727,314 @@ geriradm.o: ../src/geriradm.cpp ../src/geriradm.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o geriradm.o ../src/geriradm.cpp
 
+gerirestoque.o: ../src/gerirestoque.cpp ../src/gerirestoque.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconfig.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcore-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsysinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlogging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qflags.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmutex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnumeric.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversiontagging.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtgui-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qnamespace.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstring.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qchar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrefcount.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpair.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qarraydataops.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringliteral.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanystringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlist.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qalgorithms.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetatype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcompare.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatastream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmath.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobject_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qproperty.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyprivate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmargins.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrect.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsize.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpalette.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcolor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgb.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qrgba64.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbrush.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qimage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixelformat.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qtransform.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpolygon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qregion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpixmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfont.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qfontinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qcursor.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qbitmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qkeysequence.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qevent.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qiodevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpointer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariant.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qhash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdebug.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringconverter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qset.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qeventpoint.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvector2d.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvectornd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputdevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qscreen.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QObject \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QRect \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSize \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QSizeF \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/QTransform \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qicon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSql \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/QtSqlDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCore \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QtCoreDepends \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstracteventdispatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeventloop.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractnativeeventfilter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qabstractproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qassociativeiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbasictimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbitarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbuffer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qbytearraymatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcache.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcalendar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlocale.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdatetime.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborcommon.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qregularexpression.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/quuid.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcbormap.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamreader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfloat16.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcborstreamwriter.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcollator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcommandlineparser.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qconcatenatetablesproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdeadlinetimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qelapsedtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfiledevice.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qdiriterator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qeasingcurve.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qendian.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qexception.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfactoryinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfileselector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QStringList \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfilesystemwatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfutureinterface.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrunnable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresultstore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuture_impl.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadpool.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthread.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturesynchronizer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qfuturewatcher.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qidentityproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjnienvironment.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QScopedPointer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjniobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonarray.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonvalue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsondocument.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qjsonobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibrary.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlibraryinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qversionnumber.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qlockfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qloggingcategory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmessageauthenticationcode.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmetaobject.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedata.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimedatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qmimetype.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qobjectcleanuphandler.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qoperatingsystemversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qparallelanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpauseanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpluginloader.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qprocess.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpromise.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qpropertyanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvariantanimation.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qqueue.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qrandom.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qreadwritelock.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qresource.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsavefile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopedvaluerollback.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qscopeguard.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialanimationgroup.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsequentialiterable.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsettings.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsharedmemory.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsignalmapper.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsimd.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsocketnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsortfilterproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstack.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstandardpaths.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstorageinfo.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qstringlistmodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qsystemsemaphore.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporarydir.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtemporaryfile.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtextboundaryfinder.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qthreadstorage.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimeline.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimer.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtimezone.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtranslator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtransposeproxymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qurlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qvector.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwaitcondition.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QDeadlineTimer \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qwineventnotifier.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qxmlstream.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/qtcoreversion.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlglobal.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsql-config.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldatabase.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriver.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqldriverplugin.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlerror.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlfield.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlindex.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrecord.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquery.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlquerymodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaldelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleditemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qvalidator.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstyle.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qframe.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlistview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlrelationaltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqltablemodel.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qsqlresult.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtSql/qtsqlversion.h \
+		../src/cadproduto.h \
+		../src/editproduto.h \
+		../src/excluproduto.h \
+		ui_gerirestoque.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QVariant \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QApplication \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qguiapplication.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qinputmethod.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QPushButton \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QStatusBar \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlayout.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QWidget
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gerirestoque.o ../src/gerirestoque.cpp
+
 janelainicial.o: ../src/janelainicial.cpp ../src/janelainicial.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QMainWindow \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -3913,6 +6326,10 @@ janelainicial.o: ../src/janelainicial.cpp ../src/janelainicial.h \
 		../src/cadadm.h \
 		../src/editadm.h \
 		../src/excluadm.h \
+		../src/gerirestoque.h \
+		../src/cadproduto.h \
+		../src/editproduto.h \
+		../src/excluproduto.h \
 		ui_janelainicial.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QVariant \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QApplication \
@@ -3928,6 +6345,11 @@ janelainicial.o: ../src/janelainicial.cpp ../src/janelainicial.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QStatusBar \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qstatusbar.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QVBoxLayout \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlayout.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qgridlayout.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o janelainicial.o ../src/janelainicial.cpp
 
@@ -4227,6 +6649,10 @@ main.o: ../src/main.cpp ../src/janelalogin.h \
 		../src/cadadm.h \
 		../src/editadm.h \
 		../src/excluadm.h \
+		../src/gerirestoque.h \
+		../src/cadproduto.h \
+		../src/editproduto.h \
+		../src/excluproduto.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QApplication \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/qapplication.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtGui/qguiapplication.h \
@@ -4531,6 +6957,10 @@ janelalogin.o: ../src/janelalogin.cpp ../src/janelalogin.h \
 		../src/cadadm.h \
 		../src/editadm.h \
 		../src/excluadm.h \
+		../src/gerirestoque.h \
+		../src/cadproduto.h \
+		../src/editproduto.h \
+		../src/excluproduto.h \
 		ui_janelalogin.h \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtCore/QVariant \
 		/home/vinicius/Qt/6.1.2/gcc_64/include/QtWidgets/QApplication \
@@ -4566,14 +6996,26 @@ qrc_qmake_qmake_qm_files.o: qrc_qmake_qmake_qm_files.cpp
 moc_cadadm.o: moc_cadadm.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_cadadm.o moc_cadadm.cpp
 
+moc_cadproduto.o: moc_cadproduto.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_cadproduto.o moc_cadproduto.cpp
+
 moc_editadm.o: moc_editadm.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_editadm.o moc_editadm.cpp
+
+moc_editproduto.o: moc_editproduto.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_editproduto.o moc_editproduto.cpp
 
 moc_excluadm.o: moc_excluadm.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_excluadm.o moc_excluadm.cpp
 
+moc_excluproduto.o: moc_excluproduto.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_excluproduto.o moc_excluproduto.cpp
+
 moc_geriradm.o: moc_geriradm.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_geriradm.o moc_geriradm.cpp
+
+moc_gerirestoque.o: moc_gerirestoque.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_gerirestoque.o moc_gerirestoque.cpp
 
 moc_janelainicial.o: moc_janelainicial.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_janelainicial.o moc_janelainicial.cpp

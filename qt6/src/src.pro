@@ -10,26 +10,38 @@ CONFIG += c++11
 
 SOURCES += \
     cadadm.cpp \
+    cadproduto.cpp \
     editadm.cpp \
+    editproduto.cpp \
     excluadm.cpp \
+    excluproduto.cpp \
     geriradm.cpp \
+    gerirestoque.cpp \
     janelainicial.cpp \
     main.cpp \
     janelalogin.cpp
 
 HEADERS += \
     cadadm.h \
+    cadproduto.h \
     editadm.h \
+    editproduto.h \
     excluadm.h \
+    excluproduto.h \
     geriradm.h \
+    gerirestoque.h \
     janelainicial.h \
     janelalogin.h
 
 FORMS += \
     cadadm.ui \
+    cadproduto.ui \
     editadm.ui \
+    editproduto.ui \
     excluadm.ui \
+    excluproduto.ui \
     geriradm.ui \
+    gerirestoque.ui \
     janelainicial.ui \
     janelalogin.ui
 

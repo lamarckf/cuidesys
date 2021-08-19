@@ -31,8 +31,8 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
-    QMenuBar *menubar;
     QStatusBar *statusbar;
+    QMenuBar *menubar;
 
     void setupUi(QMainWindow *gerirAdm)
     {
@@ -69,13 +69,13 @@ public:
         gridLayout->addLayout(verticalLayout, 0, 0, 1, 1);
 
         gerirAdm->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(gerirAdm);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 368, 22));
-        gerirAdm->setMenuBar(menubar);
         statusbar = new QStatusBar(gerirAdm);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         gerirAdm->setStatusBar(statusbar);
+        menubar = new QMenuBar(gerirAdm);
+        menubar->setObjectName(QString::fromUtf8("menubar"));
+        menubar->setGeometry(QRect(0, 0, 368, 24));
+        gerirAdm->setMenuBar(menubar);
 
         retranslateUi(gerirAdm);
 

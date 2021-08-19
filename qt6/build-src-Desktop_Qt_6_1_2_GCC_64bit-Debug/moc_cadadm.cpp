@@ -23,20 +23,20 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_CadAdm_t {
     const uint offsetsAndSize[8];
-    char stringdata0[54];
+    char stringdata0[53];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_CadAdm_t, stringdata0) + ofs), len 
 static const qt_meta_stringdata_CadAdm_t qt_meta_stringdata_CadAdm = {
     {
 QT_MOC_LITERAL(0, 6), // "CadAdm"
-QT_MOC_LITERAL(7, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(31, 0), // ""
-QT_MOC_LITERAL(32, 21) // "on_pushButton_clicked"
+QT_MOC_LITERAL(7, 20), // "on_bt_voltar_clicked"
+QT_MOC_LITERAL(28, 0), // ""
+QT_MOC_LITERAL(29, 23) // "on_bt_confirmar_clicked"
 
     },
-    "CadAdm\0on_pushButton_2_clicked\0\0"
-    "on_pushButton_clicked"
+    "CadAdm\0on_bt_voltar_clicked\0\0"
+    "on_bt_confirmar_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -70,8 +70,8 @@ void CadAdm::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         auto *_t = static_cast<CadAdm *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_pushButton_2_clicked(); break;
-        case 1: _t->on_pushButton_clicked(); break;
+        case 0: _t->on_bt_voltar_clicked(); break;
+        case 1: _t->on_bt_confirmar_clicked(); break;
         default: ;
         }
     }

@@ -15,6 +15,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,10 +24,16 @@ class Ui_janelaInicial
 {
 public:
     QWidget *centralwidget;
-    QPushButton *bt_admin;
     QPushButton *bt_logout;
     QLabel *label;
     QLabel *label_4;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
+    QPushButton *bt_admin;
+    QPushButton *bt_transacoes;
+    QPushButton *bt_estoque;
+    QPushButton *bt_relatorio;
+    QPushButton *bt_sair;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *janelaInicial)
@@ -36,9 +43,6 @@ public:
         janelaInicial->resize(800, 600);
         centralwidget = new QWidget(janelaInicial);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        bt_admin = new QPushButton(centralwidget);
-        bt_admin->setObjectName(QString::fromUtf8("bt_admin"));
-        bt_admin->setGeometry(QRect(250, 140, 291, 25));
         bt_logout = new QPushButton(centralwidget);
         bt_logout->setObjectName(QString::fromUtf8("bt_logout"));
         bt_logout->setGeometry(QRect(670, 10, 89, 25));
@@ -52,6 +56,37 @@ public:
         font.setPointSize(35);
         label_4->setFont(font);
         label_4->setAlignment(Qt::AlignCenter);
+        widget = new QWidget(centralwidget);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(220, 130, 341, 271));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        bt_admin = new QPushButton(widget);
+        bt_admin->setObjectName(QString::fromUtf8("bt_admin"));
+
+        verticalLayout->addWidget(bt_admin);
+
+        bt_transacoes = new QPushButton(widget);
+        bt_transacoes->setObjectName(QString::fromUtf8("bt_transacoes"));
+
+        verticalLayout->addWidget(bt_transacoes);
+
+        bt_estoque = new QPushButton(widget);
+        bt_estoque->setObjectName(QString::fromUtf8("bt_estoque"));
+
+        verticalLayout->addWidget(bt_estoque);
+
+        bt_relatorio = new QPushButton(widget);
+        bt_relatorio->setObjectName(QString::fromUtf8("bt_relatorio"));
+
+        verticalLayout->addWidget(bt_relatorio);
+
+        bt_sair = new QPushButton(widget);
+        bt_sair->setObjectName(QString::fromUtf8("bt_sair"));
+
+        verticalLayout->addWidget(bt_sair);
+
         janelaInicial->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(janelaInicial);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -65,10 +100,14 @@ public:
     void retranslateUi(QMainWindow *janelaInicial)
     {
         janelaInicial->setWindowTitle(QCoreApplication::translate("janelaInicial", "MainWindow", nullptr));
-        bt_admin->setText(QCoreApplication::translate("janelaInicial", "Gerir Administradores", nullptr));
         bt_logout->setText(QCoreApplication::translate("janelaInicial", "Logout", nullptr));
         label->setText(QString());
         label_4->setText(QCoreApplication::translate("janelaInicial", "CuideSys", nullptr));
+        bt_admin->setText(QCoreApplication::translate("janelaInicial", "Gerir Administradores", nullptr));
+        bt_transacoes->setText(QCoreApplication::translate("janelaInicial", "Gerir Transa\303\247\303\265es", nullptr));
+        bt_estoque->setText(QCoreApplication::translate("janelaInicial", "Gerir Estoque", nullptr));
+        bt_relatorio->setText(QCoreApplication::translate("janelaInicial", "Gerar Relatorio", nullptr));
+        bt_sair->setText(QCoreApplication::translate("janelaInicial", "Sair", nullptr));
     } // retranslateUi
 
 };
