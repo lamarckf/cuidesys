@@ -7,6 +7,7 @@
 
 #include "geriradm.h"
 #include "gerirestoque.h"
+#include "gerirtransacao.h"
 
 
 /*
@@ -32,6 +33,8 @@ private slots:  // Metodos
     void on_bt_admin_clicked();
 
     void on_bt_estoque_clicked();
+
+    void on_bt_transacoes_clicked();
 
 private: // Atributos
 
@@ -59,6 +62,8 @@ private: // Atributos
      * Referencias para janela de Gestão de Estoques
      */
     GerirEstoque* janelaGerirEstoque;
+
+    gerirtransacao* janelaGerirTransacao;
 
 };
 

@@ -46,3 +46,11 @@ void janelaInicial::on_bt_estoque_clicked()
 
 
 
+
+void janelaInicial::on_bt_transacoes_clicked()
+{
+    this->hide();
+    janelaGerirTransacao = new gerirtransacao(this, bancoDeDados);
+    janelaGerirTransacao->show();
+}
+

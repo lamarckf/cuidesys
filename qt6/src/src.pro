@@ -17,6 +17,7 @@ SOURCES += \
     excluproduto.cpp \
     geriradm.cpp \
     gerirestoque.cpp \
+    gerirtransacao.cpp \
     janelainicial.cpp \
     main.cpp \
     janelalogin.cpp
@@ -30,6 +31,7 @@ HEADERS += \
     excluproduto.h \
     geriradm.h \
     gerirestoque.h \
+    gerirtransacao.h \
     janelainicial.h \
     janelalogin.h
 
@@ -42,6 +44,7 @@ FORMS += \
     excluproduto.ui \
     geriradm.ui \
     gerirestoque.ui \
+    gerirtransacao.ui \
     janelainicial.ui \
     janelalogin.ui
 
