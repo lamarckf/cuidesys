@@ -28,6 +28,11 @@ private slots:
      */
     void on_bt_confirmar_clicked();
 
+    /*
+     * Atualiza o comboBox com os produtos do banco
+     */
+    void refreshComboBox();
+
 private:
 
     /*

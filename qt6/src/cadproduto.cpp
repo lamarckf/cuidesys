@@ -49,7 +49,7 @@ void CadProduto::on_pushButton_clicked()
 
     //validando os campos
     if( nomeProd.length() == 0, precoParse.length() == 0 ){
-        ui->resultLabel->setText("Todos os campos devem ser devidamente preenchidos");
+        ui->resultLabel->setText("Todos os campos devem ser preenchidos corretamente");
         return;
     }
 
@@ -64,10 +64,10 @@ void CadProduto::on_pushButton_clicked()
     }
 
 
-
     //SQL QUERY
     QSqlQuery qry;
-    if(qry.exec("SELECT * FROM tb_produto WHERE prodNome = \'" + nomeProd + "\'"))
+
+    if(qry.exec("SELECT * FROM tb_produto WHERE prodNome = \'" + nomeProd + "\' "))
 
     {
         if(qry.next())
@@ -89,7 +89,7 @@ void CadProduto::on_pushButton_clicked()
             }
         }
     }
-    else { ui->resultLabel->setText("Não foi possivel estabelecer conexão com bando de dados2."); }
+    else { ui->resultLabel->setText("Não foi possivel estabelecer conexão com bando de dados."); }
 
 
 }

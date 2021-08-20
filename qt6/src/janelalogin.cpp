@@ -17,8 +17,8 @@ JanelaLogin::JanelaLogin(QWidget *parent) //construtor
     //QFileInfo checkFile("/home/letrus/Documents/cuidesys/qt6/src/data");
     //bancoDeDados.setDatabaseName("C:/Users/johns/Downloads/Nova pasta/cuidesys/qt6/src/data");
     //QFileInfo checkFile("C:/Users/johns/Downloads/Nova pasta/cuidesys/qt6/src/data");
-    bancoDeDados.setDatabaseName("/home/vinicius/Documentos/UFOP/ENG 1/outra/cuidesys/qt6/src/data");
-    QFileInfo checkFile("/home/vinicius/Documentos/UFOP/ENG 1/outra/cuidesys/qt6/src/data");
+    bancoDeDados.setDatabaseName("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
+    QFileInfo checkFile("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
 
 
 
@@ -63,11 +63,11 @@ void JanelaLogin::on_btn_login_clicked() //Autenticação de dados de login
     }
     QSqlQuery qry;
     bool teste =qry.exec("SELECT userName, password FROM tb_adm WHERE userName==\'" + username + "\' AND password==\'" + password +"\'" );
-    qDebug()<<qry.boundValues();
-    qDebug()<<teste;
+    //qDebug()<<qry.boundValues();
+    //qDebug()<<teste;
     if(teste)
     {
-        ui->label->setText("[+] passou2");
+        //ui->label->setText("[+] passou2");
         if(qry.next())
         {
             ui->label->setText("[+] Status");

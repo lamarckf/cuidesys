@@ -44,6 +44,11 @@ private:
     * Referencia para janela criadora
     */
     QWidget *janelaParent;
+
+    /*
+     * Atualiza o comboBox com os produtos do banco
+     */
+    void refreshComboBox();
 };
 
 #endif // EXCLUPRODUTO_H
