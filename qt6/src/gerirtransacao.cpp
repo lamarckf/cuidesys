@@ -34,12 +34,16 @@ void gerirtransacao::on_cadastrar_clicked()
 
 void gerirtransacao::on_editar_clicked()
 {
-
+    this->hide();
+    janelaEditTransacao = new edittransacao(this, bancoDeDados);
+    janelaEditTransacao->show();
 }
 
 
 void gerirtransacao::on_excluir_clicked()
 {
-
+    this->hide();
+    janelaExcluTransacao = new exclutransacao(this, bancoDeDados);
+    janelaExcluTransacao->show();
 }
 

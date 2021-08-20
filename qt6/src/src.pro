@@ -14,8 +14,10 @@ SOURCES += \
     cadtransacao.cpp \
     editadm.cpp \
     editproduto.cpp \
+    edittransacao.cpp \
     excluadm.cpp \
     excluproduto.cpp \
+    exclutransacao.cpp \
     geriradm.cpp \
     gerirestoque.cpp \
     gerirtransacao.cpp \
@@ -29,8 +31,10 @@ HEADERS += \
     cadtransacao.h \
     editadm.h \
     editproduto.h \
+    edittransacao.h \
     excluadm.h \
     excluproduto.h \
+    exclutransacao.h \
     geriradm.h \
     gerirestoque.h \
     gerirtransacao.h \
@@ -43,8 +47,10 @@ FORMS += \
     cadtransacao.ui \
     editadm.ui \
     editproduto.ui \
+    edittransacao.ui \
     excluadm.ui \
     excluproduto.ui \
+    exclutransacao.ui \
     geriradm.ui \
     gerirestoque.ui \
     gerirtransacao.ui \

@@ -6,6 +6,8 @@ cadtransacao::cadtransacao(QWidget *parent, QSqlDatabase *bd) :
     ui(new Ui::cadtransacao)
 {
     ui->setupUi(this);
+    janelaParent = parent;
+    bancoDeDados = bd;
     ui->prodComboBox->addItem("Escolha tipo de transação:");
     ui->prodComboBox->addItem("Venda");
     ui->prodComboBox->addItem("Compra");

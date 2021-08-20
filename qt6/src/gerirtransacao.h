@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QtSql>
 #include "cadtransacao.h"
+#include "edittransacao.h"
+#include "exclutransacao.h"
 
 namespace Ui {
 class gerirtransacao;
@@ -39,6 +41,8 @@ private:
     QWidget *janelaParent;
 
     cadtransacao *janelaCadTransacao;
+    edittransacao *janelaEditTransacao;
+    exclutransacao *janelaExcluTransacao;
 };
 
 #endif // GERIRTRANSACAO_H
