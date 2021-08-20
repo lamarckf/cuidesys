@@ -62,7 +62,7 @@ void JanelaLogin::on_btn_login_clicked() //Autenticação de dados de login
         return;
     }
     QSqlQuery qry;
-    bool teste =qry.exec("SELECT userName, password FROM tb_adm WHERE userName==\'" + username + "\' AND password==\'" + password +"\'" );
+    bool teste =qry.exec("SELECT userName, password FROM tb_user WHERE userName==\'" + username + "\' AND password==\'" + password +"\'" );
     //qDebug()<<qry.boundValues();
     //qDebug()<<teste;
     if(teste)

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QtSql>
+#include "cadtransacao.h"
 
 namespace Ui {
 class gerirtransacao;
@@ -19,6 +20,12 @@ public:
 private slots:
     void on_pushButton_4_clicked();
 
+    void on_cadastrar_clicked();
+
+    void on_editar_clicked();
+
+    void on_excluir_clicked();
+
 private:
     Ui::gerirtransacao *ui;
     /*
@@ -30,6 +37,8 @@ private:
     * Referencia para janela criadora
     */
     QWidget *janelaParent;
+
+    cadtransacao *janelaCadTransacao;
 };
 
 #endif // GERIRTRANSACAO_H

@@ -23,3 +23,23 @@ void gerirtransacao::on_pushButton_4_clicked()
     delete this;
 }
 
+
+void gerirtransacao::on_cadastrar_clicked()
+{
+    this->hide();
+    janelaCadTransacao = new cadtransacao(this, bancoDeDados);
+    janelaCadTransacao->show();
+}
+
+
+void gerirtransacao::on_editar_clicked()
+{
+
+}
+
+
+void gerirtransacao::on_excluir_clicked()
+{
+
+}
+

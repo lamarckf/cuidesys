@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     cadadm.cpp \
     cadproduto.cpp \
+    cadtransacao.cpp \
     editadm.cpp \
     editproduto.cpp \
     excluadm.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 HEADERS += \
     cadadm.h \
     cadproduto.h \
+    cadtransacao.h \
     editadm.h \
     editproduto.h \
     excluadm.h \
@@ -38,6 +40,7 @@ HEADERS += \
 FORMS += \
     cadadm.ui \
     cadproduto.ui \
+    cadtransacao.ui \
     editadm.ui \
     editproduto.ui \
     excluadm.ui \

@@ -25,9 +25,9 @@ class Ui_gerirtransacao
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
+    QPushButton *cadastrar;
+    QPushButton *editar;
+    QPushButton *excluir;
     QPushButton *pushButton_4;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -41,20 +41,20 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        cadastrar = new QPushButton(centralwidget);
+        cadastrar->setObjectName(QString::fromUtf8("cadastrar"));
 
-        gridLayout->addWidget(pushButton, 0, 0, 1, 1);
+        gridLayout->addWidget(cadastrar, 0, 0, 1, 1);
 
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        editar = new QPushButton(centralwidget);
+        editar->setObjectName(QString::fromUtf8("editar"));
 
-        gridLayout->addWidget(pushButton_2, 1, 0, 1, 1);
+        gridLayout->addWidget(editar, 1, 0, 1, 1);
 
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        excluir = new QPushButton(centralwidget);
+        excluir->setObjectName(QString::fromUtf8("excluir"));
 
-        gridLayout->addWidget(pushButton_3, 2, 0, 1, 1);
+        gridLayout->addWidget(excluir, 2, 0, 1, 1);
 
         pushButton_4 = new QPushButton(centralwidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
@@ -78,9 +78,9 @@ public:
     void retranslateUi(QMainWindow *gerirtransacao)
     {
         gerirtransacao->setWindowTitle(QCoreApplication::translate("gerirtransacao", "MainWindow", nullptr));
-        pushButton->setText(QCoreApplication::translate("gerirtransacao", "Cadastrar transa\303\247\303\243o", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("gerirtransacao", "Editar transa\303\247\303\243o", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("gerirtransacao", "Excluir transa\303\247\303\243o", nullptr));
+        cadastrar->setText(QCoreApplication::translate("gerirtransacao", "Cadastrar transa\303\247\303\243o", nullptr));
+        editar->setText(QCoreApplication::translate("gerirtransacao", "Editar transa\303\247\303\243o", nullptr));
+        excluir->setText(QCoreApplication::translate("gerirtransacao", "Excluir transa\303\247\303\243o", nullptr));
         pushButton_4->setText(QCoreApplication::translate("gerirtransacao", "Voltar ", nullptr));
     } // retranslateUi
 

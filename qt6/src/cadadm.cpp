@@ -55,7 +55,7 @@ void CadAdm::on_bt_confirmar_clicked() // Cadastrando novo usuarioa
 
     //SQL QUERY
     QSqlQuery qry;
-    if(qry.exec("SELECT * FROM tb_adm WHERE userName==\'" + nomeUsr + "\' "))
+    if(qry.exec("SELECT * FROM tb_user WHERE userName==\'" + nomeUsr + "\' "))
     {
         if(qry.next())
         {
@@ -64,7 +64,7 @@ void CadAdm::on_bt_confirmar_clicked() // Cadastrando novo usuarioa
         }
         else
         {
-            if(qry.exec("INSERT INTO tb_adm (userName, password, address) VALUES ( \'" + nomeUsr + "\', \'" + senha + "\',   \'" + ender + "\' )")){
+            if(qry.exec("INSERT INTO tb_user (userName, password, address) VALUES ( \'" + nomeUsr + "\', \'" + senha + "\',   \'" + ender + "\' )")){
                 ui->resultLabel->setText("Usuário Cadastrado !");
                 ui->lineNome->setText("");
                 ui->lineSenha->setText("");
