@@ -45,7 +45,7 @@ void EditAdm::refreshComboBox(){ //Atualização da listagem
 
     //SQL QUERY
     QSqlQuery qry;
-    if(qry.exec("SELECT userName FROM tb_adm ")) // Requisição de dados apartir do BD
+    if(qry.exec("SELECT userName FROM tb_user ")) // Requisição de dados apartir do BD
     {
 
         while(qry.next())
@@ -88,13 +88,13 @@ void EditAdm::on_pushButton_clicked() // Atualizando dados de adm
     //SQL QUERY
     QString actual = ui->admComboBox->currentText();
     QSqlQuery qry;
-    if(qry.exec("SELECT * FROM tb_adm WHERE userName=\'" + actual + "\'"))
+    if(qry.exec("SELECT * FROM tb_user WHERE userName=\'" + actual + "\'"))
     {
 
         if(qry.next())
         {
-            //qry.exec("INSERT INTO tb_adm (userName, password, address) VALUES ( \'" + nomeUsr + "\', \'" + senha + "\',   \'" + ender + "\' )")
-            qry.exec("UPDATE tb_adm SET userName= \'" + nomeUsr + "\', password= \'" + senha
+            //qry.exec("INSERT INTO tb_user (userName, password, address) VALUES ( \'" + nomeUsr + "\', \'" + senha + "\',   \'" + ender + "\' )")
+            qry.exec("UPDATE tb_user SET userName= \'" + nomeUsr + "\', password= \'" + senha
                      + "\', address= \'" + ender + "\' WHERE userName=\'" + actual + "\'");
             ui->resultLabel->setText("Atualizado Com sucesso !!");
         }

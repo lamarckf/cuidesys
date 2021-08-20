@@ -46,12 +46,12 @@ void ExcluAdm::on_pushButton_clicked() // Exlusao do de Adm
     //SQL QUERY
     QString actual = ui->admComboBox->currentText();
     QSqlQuery qry;
-    if(qry.exec("SELECT * FROM tb_adm WHERE userName=\'" + actual + "\'"))
+    if(qry.exec("SELECT * FROM tb_user WHERE userName=\'" + actual + "\'"))
     {
 
         if(qry.next())
         {
-            qry.exec("DELETE FROM tb_adm WHERE userName=\'" + actual + "\'");
+            qry.exec("DELETE FROM tb_user WHERE userName=\'" + actual + "\'");
             ui->resultLabel->setText("Deletado Com sucesso !!");
         }
 
@@ -81,7 +81,7 @@ void ExcluAdm::refreshComboBox(){ //Atualizaçao do label
 
     //SQL QUERY
     QSqlQuery qry;
-    if(qry.exec("SELECT userName FROM tb_adm "))
+    if(qry.exec("SELECT userName FROM tb_user "))
     {
 
         while(qry.next())
