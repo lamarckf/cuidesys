@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateEdit>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -50,6 +51,8 @@ public:
     QSpinBox *prodSpinBox;
     QPushButton *CadastrarPushButton;
     QComboBox *prodComboBox;
+    QLabel *label_3;
+    QFrame *frame;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -68,7 +71,7 @@ public:
         confirmarPushButton->setGeometry(QRect(350, 490, 89, 25));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(100, 110, 291, 29));
+        layoutWidget->setGeometry(QRect(90, 90, 291, 29));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -84,7 +87,7 @@ public:
 
         layoutWidget1 = new QWidget(centralwidget);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(100, 140, 238, 30));
+        layoutWidget1->setGeometry(QRect(90, 120, 238, 30));
         horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -113,29 +116,52 @@ public:
         tableWidget->setGeometry(QRect(100, 280, 621, 192));
         resultLabel = new QLabel(centralwidget);
         resultLabel->setObjectName(QString::fromUtf8("resultLabel"));
-        resultLabel->setGeometry(QRect(100, 20, 621, 19));
+        resultLabel->setGeometry(QRect(100, 10, 621, 19));
         tipoComboBox = new QComboBox(centralwidget);
         tipoComboBox->setObjectName(QString::fromUtf8("tipoComboBox"));
-        tipoComboBox->setGeometry(QRect(100, 70, 629, 27));
+        tipoComboBox->setGeometry(QRect(90, 50, 629, 27));
         prodSpinBoxDel = new QSpinBox(centralwidget);
         prodSpinBoxDel->setObjectName(QString::fromUtf8("prodSpinBoxDel"));
-        prodSpinBoxDel->setGeometry(QRect(514, 230, 91, 28));
+        prodSpinBoxDel->setGeometry(QRect(513, 240, 91, 28));
         DeletarPushButton = new QPushButton(centralwidget);
         DeletarPushButton->setObjectName(QString::fromUtf8("DeletarPushButton"));
-        DeletarPushButton->setGeometry(QRect(609, 230, 112, 28));
+        DeletarPushButton->setGeometry(QRect(608, 240, 112, 28));
         prodComboBoxDel = new QComboBox(centralwidget);
         prodComboBoxDel->setObjectName(QString::fromUtf8("prodComboBoxDel"));
-        prodComboBoxDel->setGeometry(QRect(100, 230, 410, 28));
+        prodComboBoxDel->setGeometry(QRect(99, 240, 410, 28));
         prodSpinBox = new QSpinBox(centralwidget);
         prodSpinBox->setObjectName(QString::fromUtf8("prodSpinBox"));
-        prodSpinBox->setGeometry(QRect(515, 190, 91, 28));
+        prodSpinBox->setGeometry(QRect(514, 200, 91, 28));
         CadastrarPushButton = new QPushButton(centralwidget);
         CadastrarPushButton->setObjectName(QString::fromUtf8("CadastrarPushButton"));
-        CadastrarPushButton->setGeometry(QRect(610, 190, 112, 28));
+        CadastrarPushButton->setGeometry(QRect(609, 200, 112, 28));
         prodComboBox = new QComboBox(centralwidget);
         prodComboBox->setObjectName(QString::fromUtf8("prodComboBox"));
-        prodComboBox->setGeometry(QRect(101, 190, 410, 28));
+        prodComboBox->setGeometry(QRect(100, 200, 410, 28));
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(100, 170, 67, 19));
+        frame = new QFrame(centralwidget);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setGeometry(QRect(90, 190, 641, 291));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
         cadtransacao->setCentralWidget(centralwidget);
+        frame->raise();
+        voltar->raise();
+        confirmarPushButton->raise();
+        layoutWidget1->raise();
+        layoutWidget1->raise();
+        tableWidget->raise();
+        resultLabel->raise();
+        tipoComboBox->raise();
+        prodSpinBoxDel->raise();
+        DeletarPushButton->raise();
+        prodComboBoxDel->raise();
+        prodSpinBox->raise();
+        CadastrarPushButton->raise();
+        prodComboBox->raise();
+        label_3->raise();
         menubar = new QMenuBar(cadtransacao);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 800, 24));
@@ -165,8 +191,9 @@ public:
         QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QCoreApplication::translate("cadtransacao", "Pre\303\247o Total", nullptr));
         resultLabel->setText(QCoreApplication::translate("cadtransacao", "Resultado", nullptr));
-        DeletarPushButton->setText(QCoreApplication::translate("cadtransacao", "Deletar", nullptr));
-        CadastrarPushButton->setText(QCoreApplication::translate("cadtransacao", "Cadastrar", nullptr));
+        DeletarPushButton->setText(QCoreApplication::translate("cadtransacao", "Del", nullptr));
+        CadastrarPushButton->setText(QCoreApplication::translate("cadtransacao", "Add", nullptr));
+        label_3->setText(QCoreApplication::translate("cadtransacao", "Carrinho", nullptr));
     } // retranslateUi
 
 };

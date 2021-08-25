@@ -9,20 +9,28 @@ cadtransacao::cadtransacao(QWidget *parent, QSqlDatabase *bd) :
     janelaParent = parent;
     bancoDeDados = bd;
 
+    //Ajustando ComboBox Tipo de Transação
     ui->tipoComboBox->addItem("Escolha tipo de transação:");
     ui->tipoComboBox->addItem("Venda");
     ui->tipoComboBox->addItem("Compra");
 
+    //Ajustando Label de resultados
     ui->resultLabel->setText("");
 
+    //Ajustando Spin Boxes
     ui->prodSpinBox->setMinimum(1);
     ui->prodSpinBoxDel->setMinimum(1);
 
+    //Ajustando Tabela
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableWidget->setRowCount(15);
+    auto header = this->ui->tableWidget->horizontalHeader();
+    header->setSectionResizeMode(QHeaderView::Stretch);
 
+    //Ajustando Data inicial
     ui->dateEdit->setDate(QDate::currentDate());
 
+    //Atualizando os produtos do comboBox
     refreshProds();
 }
 
@@ -40,6 +48,7 @@ void cadtransacao::on_voltar_clicked()
 
 void cadtransacao::refreshProds(){
     ui->prodComboBox->clear();
+    ui->prodComboBoxDel->clear();
 
     //CONFERINDO CONEXÃO
     if(!bancoDeDados->isOpen())
@@ -58,7 +67,6 @@ void cadtransacao::refreshProds(){
 
         while(qry.next())
         {
-            qDebug() << qry.value(0).toString() ;
             QString result = qry.value(0).toString() + " - R$ "  + qry.value(1).toString();
             ui->prodComboBox->addItem(result);
             ui->prodComboBoxDel->addItem(result);
@@ -67,7 +75,6 @@ void cadtransacao::refreshProds(){
     else { ui->resultLabel->setText("Não foi possivel estabelecer conexão com bando de dados. (2)"); }
 
 }
-
 
 void cadtransacao::on_CadastrarPushButton_clicked()
 {
@@ -107,9 +114,15 @@ void cadtransacao::on_CadastrarPushButton_clicked()
     //Atualiza a tabela
     refreshTable();
 
+    //Atualizando os produtos do comboBox
+    refreshProds();
+
     //Exibindo exito da operação para o usuário
     if (in) { ui->resultLabel->setText("Quantidade do produto atualizada !"); }
     else { ui->resultLabel->setText("Produto Adicionado ao Carrinho !"); }
+
+    //Reseta valro do spin
+    ui->prodSpinBox->setValue(1);
 
 }
 
@@ -117,6 +130,17 @@ void cadtransacao::refreshTable(){
 
     //Limpa a tabela
     this->ui->tableWidget->clear();
+
+    //Definindo cabeçalho
+    QString coluna1 = "Produto";
+    QString coluna2 = "Preço Un.";
+    QString coluna3 = "Unidades";
+    QString coluna4 = "Preço Total";
+    QStringList headersLabel(coluna1);
+    headersLabel << coluna2 << coluna3<< coluna4;
+    this->ui->tableWidget->setHorizontalHeaderLabels(headersLabel);
+
+
 
 
     for(int i=0; i < linhas.size() ; i++){
@@ -156,7 +180,7 @@ void cadtransacao::on_DeletarPushButton_clicked()
     bool in = false; //Presente na tabela
     bool delTotal = false; //Deletado totalmente
     std::vector<linha>::iterator itr;
-    for(itr = linhas.begin(); itr != linhas.end() ; ){
+    for(itr = linhas.begin(); itr != linhas.end(); itr++){
 
         //Se estiver deleta o item ou atualiza as quantidades
         if (itr->nomeProduto == delLinha.nomeProduto)
@@ -184,12 +208,18 @@ void cadtransacao::on_DeletarPushButton_clicked()
     //Atualiza a tabela
     refreshTable();
 
+    //Atualizando os produtos do comboBox
+    refreshProds();
+
     //Exibindo resultado da operação para o usuário
     if (!in) { ui->resultLabel->setText("Produto não esta presente no carrinho !"); }
     else if(delTotal) { ui->resultLabel->setText("Produto deletado do carrinho !"); }
     else { ui->resultLabel->setText("Quantidade do produto atualizada no carrinho !"); }
-}
 
+
+    //Reseta valro do spin
+    ui->prodSpinBoxDel->setValue(1);
+}
 
 void cadtransacao::on_confirmarPushButton_clicked()
 {
@@ -218,13 +248,12 @@ void cadtransacao::on_confirmarPushButton_clicked()
 
     //Criando Transação no Banco de Dados
     QSqlQuery qry;
-    qDebug() << "INSERT INTO tb_transation ( data, vendendor, tipo) VALUES (\'" + data + "\', \'" + vendedor + "\', \'" + tipoTrans + "\')";
-    if( qry.exec("INSERT INTO tb_transation ( data, vendendor, tipo) VALUES (\'" + data + "\', \'" + vendedor + "\', \'" + tipoTrans + "\')") )
+    if( qry.exec("INSERT INTO tb_transation ( data, vendedor, tipo) VALUES (\'" + data + "\', \'" + vendedor + "\', \'" + tipoTrans + "\')") )
     {
     }
     else
     {
-        ui->resultLabel->setText("Não foi possivel adicionar transação");
+        ui->resultLabel->setText("Não foi possivel adicionar transação. ");
         return;
     }
 
@@ -232,20 +261,19 @@ void cadtransacao::on_confirmarPushButton_clicked()
     QSqlQuery qry2;
     qry2.exec("SELECT last_insert_rowid()");
     QString idTransation = qry2.value(0).toString();
-    qDebug() << "ID transation: " << idTransation ;
-    do{
-        qDebug() << "LEL";
-        qDebug() <<"0" << qry2.value(0).toString();
-        qDebug() <<"1" << qry2.value(1).toString();
-        qDebug() << "2" << qry2.value(2).toString();
-    }while(qry2.next());
+    //Lê todas as querys ate encontrar o id a ultima transação adicionada
+    while(qry2.next() && idTransation.length() == 0){
+        idTransation = qry2.value(0).toString();
+    };
 
 
     std::vector<linha>::iterator itr;
-    for(itr = linhas.begin(); itr != linhas.end() ; ){
+    for(itr = linhas.begin(); itr != linhas.end() ; itr++){
 
         QString nomeProd = itr->nomeProduto;
         QString quantidade = itr->quantidade;
+
+
         if (qry2.exec("INSERT INTO tb_transation_produto (quantidade, idTransation, prodNome) VALUES ( "+ quantidade +", " + idTransation +", \'"+ nomeProd +"\')") )
         {}
         else
@@ -258,11 +286,11 @@ void cadtransacao::on_confirmarPushButton_clicked()
 
 
     ui->vendedorLineEdit->setText("");
-    ui->prodComboBox->setCurrentText("Escolha tipo de transação:");
+    ui->prodComboBox->setCurrentIndex(0);
     ui->dateEdit->setDate(QDate::currentDate());
     linhas.clear();
     refreshTable();
-    ui->resultLabel->setText("Transação adicionada com sucesso Q");
+    ui->resultLabel->setText("Transação adicionada com sucesso !");
 
 
 }

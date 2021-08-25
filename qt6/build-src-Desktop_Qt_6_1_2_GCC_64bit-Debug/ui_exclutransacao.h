@@ -11,6 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -24,6 +26,9 @@ class Ui_exclutransacao
 public:
     QWidget *centralwidget;
     QPushButton *voltar;
+    QComboBox *transacaoComboBox;
+    QLabel *resultLabel;
+    QPushButton *confirmarPushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -31,16 +36,25 @@ public:
     {
         if (exclutransacao->objectName().isEmpty())
             exclutransacao->setObjectName(QString::fromUtf8("exclutransacao"));
-        exclutransacao->resize(800, 600);
+        exclutransacao->resize(793, 256);
         centralwidget = new QWidget(exclutransacao);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         voltar = new QPushButton(centralwidget);
         voltar->setObjectName(QString::fromUtf8("voltar"));
-        voltar->setGeometry(QRect(330, 280, 89, 25));
+        voltar->setGeometry(QRect(320, 150, 89, 25));
+        transacaoComboBox = new QComboBox(centralwidget);
+        transacaoComboBox->setObjectName(QString::fromUtf8("transacaoComboBox"));
+        transacaoComboBox->setGeometry(QRect(80, 80, 629, 27));
+        resultLabel = new QLabel(centralwidget);
+        resultLabel->setObjectName(QString::fromUtf8("resultLabel"));
+        resultLabel->setGeometry(QRect(80, 50, 631, 19));
+        confirmarPushButton = new QPushButton(centralwidget);
+        confirmarPushButton->setObjectName(QString::fromUtf8("confirmarPushButton"));
+        confirmarPushButton->setGeometry(QRect(320, 120, 89, 25));
         exclutransacao->setCentralWidget(centralwidget);
         menubar = new QMenuBar(exclutransacao);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 793, 24));
         exclutransacao->setMenuBar(menubar);
         statusbar = new QStatusBar(exclutransacao);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -55,6 +69,8 @@ public:
     {
         exclutransacao->setWindowTitle(QCoreApplication::translate("exclutransacao", "MainWindow", nullptr));
         voltar->setText(QCoreApplication::translate("exclutransacao", "Voltar", nullptr));
+        resultLabel->setText(QCoreApplication::translate("exclutransacao", "Resultado", nullptr));
+        confirmarPushButton->setText(QCoreApplication::translate("exclutransacao", "Confirmar", nullptr));
     } // retranslateUi
 
 };

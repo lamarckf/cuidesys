@@ -17,7 +17,21 @@ public:
     ~exclutransacao();
 
 private slots:
+
+    /*
+     * Atualiza o combobox com as transacoes presentes no banco de dados
+     */
+    void refreshTransacoes();
+
+    /*
+     * Define ação quando o botão de voltar é clickado
+     */
     void on_voltar_clicked();
+
+    /*
+     * Define ação quando o botão de confimar transação é clickado
+     */
+    void on_confirmarPushButton_clicked();
 
 private:
     Ui::exclutransacao *ui;

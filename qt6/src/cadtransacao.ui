@@ -43,8 +43,8 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>110</y>
+      <x>90</x>
+      <y>90</y>
       <width>291</width>
       <height>29</height>
      </rect>
@@ -65,8 +65,8 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>140</y>
+      <x>90</x>
+      <y>120</y>
       <width>238</width>
       <height>30</height>
      </rect>
@@ -118,7 +118,7 @@
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>20</y>
+      <y>10</y>
       <width>621</width>
       <height>19</height>
      </rect>
@@ -130,8 +130,8 @@
    <widget class="QComboBox" name="tipoComboBox">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>70</y>
+      <x>90</x>
+      <y>50</y>
       <width>629</width>
       <height>27</height>
      </rect>
@@ -140,8 +140,8 @@
    <widget class="QSpinBox" name="prodSpinBoxDel">
     <property name="geometry">
      <rect>
-      <x>514</x>
-      <y>230</y>
+      <x>513</x>
+      <y>240</y>
       <width>91</width>
       <height>28</height>
      </rect>
@@ -150,21 +150,21 @@
    <widget class="QPushButton" name="DeletarPushButton">
     <property name="geometry">
      <rect>
-      <x>609</x>
-      <y>230</y>
+      <x>608</x>
+      <y>240</y>
       <width>112</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>Deletar</string>
+     <string>Del</string>
     </property>
    </widget>
    <widget class="QComboBox" name="prodComboBoxDel">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>230</y>
+      <x>99</x>
+      <y>240</y>
       <width>410</width>
       <height>28</height>
      </rect>
@@ -173,8 +173,8 @@
    <widget class="QSpinBox" name="prodSpinBox">
     <property name="geometry">
      <rect>
-      <x>515</x>
-      <y>190</y>
+      <x>514</x>
+      <y>200</y>
       <width>91</width>
       <height>28</height>
      </rect>
@@ -183,26 +183,70 @@
    <widget class="QPushButton" name="CadastrarPushButton">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>190</y>
+      <x>609</x>
+      <y>200</y>
       <width>112</width>
       <height>28</height>
      </rect>
     </property>
     <property name="text">
-     <string>Cadastrar</string>
+     <string>Add</string>
     </property>
    </widget>
    <widget class="QComboBox" name="prodComboBox">
     <property name="geometry">
      <rect>
-      <x>101</x>
-      <y>190</y>
+      <x>100</x>
+      <y>200</y>
       <width>410</width>
       <height>28</height>
      </rect>
     </property>
    </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>170</y>
+      <width>67</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Carrinho</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>190</y>
+      <width>641</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <zorder>frame</zorder>
+   <zorder>voltar</zorder>
+   <zorder>confirmarPushButton</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>tableWidget</zorder>
+   <zorder>resultLabel</zorder>
+   <zorder>tipoComboBox</zorder>
+   <zorder>prodSpinBoxDel</zorder>
+   <zorder>DeletarPushButton</zorder>
+   <zorder>prodComboBoxDel</zorder>
+   <zorder>prodSpinBox</zorder>
+   <zorder>CadastrarPushButton</zorder>
+   <zorder>prodComboBox</zorder>
+   <zorder>label_3</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
