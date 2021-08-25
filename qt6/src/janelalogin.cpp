@@ -13,12 +13,12 @@ JanelaLogin::JanelaLogin(QWidget *parent) //construtor
 {
     ui->setupUi(this);
     bancoDeDados=QSqlDatabase::addDatabase("QSQLITE");   // Conexao com banco de dado
-    bancoDeDados.setDatabaseName("/home/letrus/Documents/cuidesys/qt6/src/data");
-    QFileInfo checkFile("/home/letrus/Documents/cuidesys/qt6/src/data");
+    //bancoDeDados.setDatabaseName("/home/letrus/Documents/cuidesys/qt6/src/data");
+    //QFileInfo checkFile("/home/letrus/Documents/cuidesys/qt6/src/data");
     //bancoDeDados.setDatabaseName("C:/Users/johns/Downloads/Nova pasta/cuidesys/qt6/src/data");
     //QFileInfo checkFile("C:/Users/johns/Downloads/Nova pasta/cuidesys/qt6/src/data");
-    //bancoDeDados.setDatabaseName("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
-    //QFileInfo checkFile("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
+    bancoDeDados.setDatabaseName("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
+    QFileInfo checkFile("/home/vinicius/Documentos/UFOP/ENG 1/cuidesys/qt6/src/data");
 
 
 
