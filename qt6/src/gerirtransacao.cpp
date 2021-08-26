@@ -8,7 +8,6 @@ gerirtransacao::gerirtransacao(QWidget *parent, QSqlDatabase *bd) :
     ui->setupUi(this);
     janelaParent = parent;
     bancoDeDados = bd;
-    //CONFERINDO CONEXÃO
 }
 
 gerirtransacao::~gerirtransacao()

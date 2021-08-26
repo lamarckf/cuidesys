@@ -83,10 +83,37 @@ void gerirrelatorio::refreshTransacaoFinal(){
         while(qry.next())
         {
             QString result = qry.value(0).toString();
-            ui->relatorioinicial->addItem(result);
+            ui->relatoriofinal->addItem(result);
 
         }
     }
     else { ui->resultLabel->setText("Não foi possivel estabelecer conexão com bando de dados. (2)"); }
 
 }
+
+void gerirrelatorio::on_confirmar_clicked()
+{
+    if(this->ui->tiporelatorio->currentText()=="Escolha tipo de relatório:") {
+        ui->resultLabel->setText("Tipo de relatório em branco");
+
+        refreshRelatorio();
+        refreshTransacaoInicial();
+        refreshTransacaoFinal();
+
+    } else if(this->ui->relatoriofinal->currentText()>this->ui->relatorioinicial->currentText())
+    {
+        int *inicio=new int [this->ui->relatorioinicial->currentText().split(" ")[0].toInt()];
+        int *fim= new int [this->ui->relatoriofinal->currentText().split(" ")[0].toInt()];
+        this->hide();
+        QString *type = new QString (this->ui->tiporelatorio->currentText());
+        JanelaExibeRelatorio = new exiberelatorio(this, bancoDeDados,type, inicio, fim );
+        JanelaExibeRelatorio->show();
+    }
+    else
+    {
+        ui->resultLabel->setText("O número do relátorio final é menor que o número do relátorio inicial");
+        refreshTransacaoInicial();
+        refreshTransacaoFinal();
+    }
+}
+

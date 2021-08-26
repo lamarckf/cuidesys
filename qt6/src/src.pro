@@ -18,6 +18,7 @@ SOURCES += \
     excluadm.cpp \
     excluproduto.cpp \
     exclutransacao.cpp \
+    exiberelatorio.cpp \
     geriradm.cpp \
     gerirestoque.cpp \
     gerirrelatorio.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     excluadm.h \
     excluproduto.h \
     exclutransacao.h \
+    exiberelatorio.h \
     geriradm.h \
     gerirestoque.h \
     gerirrelatorio.h \
@@ -53,6 +55,7 @@ FORMS += \
     excluadm.ui \
     excluproduto.ui \
     exclutransacao.ui \
+    exiberelatorio.ui \
     geriradm.ui \
     gerirestoque.ui \
     gerirrelatorio.ui \

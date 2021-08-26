@@ -3,6 +3,10 @@
 
 #include <QMainWindow>
 #include <QtSql>
+#include <string.h>
+#include <stdlib.h>
+#include "exiberelatorio.h"
+using namespace std;
 
 namespace Ui {
 class gerirrelatorio;
@@ -19,6 +23,8 @@ public:
 private slots:
     void on_bt_voltar_clicked();
 
+    void on_confirmar_clicked();
+
 private:
     Ui::gerirrelatorio *ui;
     /*
@@ -34,5 +40,7 @@ private:
     void refreshRelatorio();
     void refreshTransacaoInicial();
     void refreshTransacaoFinal();
+
+    exiberelatorio *JanelaExibeRelatorio;
 };
 #endif // GERIRRELATORIO_H
