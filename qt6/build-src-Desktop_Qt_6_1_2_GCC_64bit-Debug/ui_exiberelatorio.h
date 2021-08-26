@@ -24,8 +24,8 @@ class Ui_exiberelatorio
 {
 public:
     QWidget *centralwidget;
-    QLabel *relatorio;
     QPushButton *bt_voltar;
+    QLabel *relatorio;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -36,12 +36,16 @@ public:
         exiberelatorio->resize(800, 600);
         centralwidget = new QWidget(exiberelatorio);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        relatorio = new QLabel(centralwidget);
-        relatorio->setObjectName(QString::fromUtf8("relatorio"));
-        relatorio->setGeometry(QRect(60, 20, 621, 19));
         bt_voltar = new QPushButton(centralwidget);
         bt_voltar->setObjectName(QString::fromUtf8("bt_voltar"));
-        bt_voltar->setGeometry(QRect(220, 320, 319, 25));
+        bt_voltar->setGeometry(QRect(220, 290, 319, 25));
+        relatorio = new QLabel(centralwidget);
+        relatorio->setObjectName(QString::fromUtf8("relatorio"));
+        relatorio->setGeometry(QRect(100, 0, 541, 141));
+        QFont font;
+        font.setPointSize(35);
+        relatorio->setFont(font);
+        relatorio->setAlignment(Qt::AlignCenter);
         exiberelatorio->setCentralWidget(centralwidget);
         menubar = new QMenuBar(exiberelatorio);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -59,8 +63,8 @@ public:
     void retranslateUi(QMainWindow *exiberelatorio)
     {
         exiberelatorio->setWindowTitle(QCoreApplication::translate("exiberelatorio", "MainWindow", nullptr));
-        relatorio->setText(QCoreApplication::translate("exiberelatorio", "Relatorio", nullptr));
         bt_voltar->setText(QCoreApplication::translate("exiberelatorio", "Voltar", nullptr));
+        relatorio->setText(QCoreApplication::translate("exiberelatorio", "Relatorio", nullptr));
     } // retranslateUi
 
 };
