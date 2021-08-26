@@ -31,9 +31,16 @@
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QTableWidget" name="tableWidget"/>
+     <widget class="QLabel" name="resultLabel">
+      <property name="text">
+       <string>Resultado</string>
+      </property>
+     </widget>
     </item>
     <item row="2" column="0">
+     <widget class="QTableWidget" name="tableWidget"/>
+    </item>
+    <item row="3" column="0">
      <widget class="QPushButton" name="bt_voltar">
       <property name="text">
        <string>Voltar</string>

@@ -33,7 +33,6 @@ void gerirrelatorio::refreshRelatorio(){
     ui->tiporelatorio->addItem("Produto mais vendido");
     ui->tiporelatorio->addItem("Melhor vendedor");
     ui->tiporelatorio->addItem("Todos os vendedores");
-    ui->tiporelatorio->addItem("Devoluções realizadas");
     ui->tiporelatorio->addItem("Fluxo de caixa");
 
 }
@@ -100,12 +99,15 @@ void gerirrelatorio::on_confirmar_clicked()
         refreshTransacaoInicial();
         refreshTransacaoFinal();
 
-    } else if(this->ui->relatoriofinal->currentText()>this->ui->relatorioinicial->currentText())
+    } else if(this->ui->relatoriofinal->currentText()>=this->ui->relatorioinicial->currentText() && this->ui->relatoriofinal->currentText()!="Escolha o número da transação final" )
     {
-        int *inicio=new int [this->ui->relatorioinicial->currentText().split(" ")[0].toInt()];
-        int *fim= new int [this->ui->relatoriofinal->currentText().split(" ")[0].toInt()];
+        QString *inicio=new QString (this->ui->relatorioinicial->currentText());
+        QString *fim= new QString (this->ui->relatoriofinal->currentText());
         this->hide();
         QString *type = new QString (this->ui->tiporelatorio->currentText());
+        refreshRelatorio();
+        refreshTransacaoInicial();
+        refreshTransacaoFinal();
         JanelaExibeRelatorio = new exiberelatorio(this, bancoDeDados,type, inicio, fim );
         JanelaExibeRelatorio->show();
     }

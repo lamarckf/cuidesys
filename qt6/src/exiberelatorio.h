@@ -13,7 +13,7 @@ class exiberelatorio : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit exiberelatorio(QWidget *parent = nullptr, QSqlDatabase *bd = nullptr, QString *type= nullptr, int *transacaoInicio= nullptr, int *transacaoFim= nullptr );
+    explicit exiberelatorio(QWidget *parent = nullptr, QSqlDatabase *bd = nullptr, QString *type= nullptr, QString *transacaoInicio= nullptr, QString *transacaoFim= nullptr );
     ~exiberelatorio();
 
 private slots:
@@ -31,8 +31,8 @@ private:
     */
     QWidget *janelaParent;
     QString *tipo;
-    int *tInicio;
-    int *tFim;
+    QString *tInicio;
+    QString *tFim;
 };
 
 #endif // EXIBERELATORIO_H
