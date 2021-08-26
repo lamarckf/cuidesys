@@ -33,7 +33,6 @@ void gerirrelatorio::refreshRelatorio(){
     ui->tiporelatorio->addItem("Produto mais vendido");
     ui->tiporelatorio->addItem("Melhor vendedor");
     ui->tiporelatorio->addItem("Todos os vendedores");
-    ui->tiporelatorio->addItem("Fluxo de caixa");
 
 }
 

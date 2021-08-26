@@ -308,21 +308,6 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
 
 
         //this->ui->tableWidget->setRowCount(tem que somar o numero de vendedores);
-    }else if(*tipo== "Fluxo de caixa")
-    {
-        this->ui->tableWidget->setColumnCount(5);
-        QString coluna1 = "Data Inicial";
-        QString coluna2 = "Data Final";
-        QString coluna3 = "Entrada";
-        QString coluna4 = "Saída";
-        QString coluna5 = "Saldo";
-        QStringList headersLabel(coluna1);
-        headersLabel << coluna2 << coluna3 <<coluna4<<coluna5;
-        this->ui->tableWidget->setHorizontalHeaderLabels(headersLabel);
-        this->ui->tableWidget->setRowCount(1);
-        auto header = this->ui->tableWidget->horizontalHeader();
-        header->setSectionResizeMode(QHeaderView::Stretch);
-        ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     }
 }
 
