@@ -54,3 +54,11 @@ void janelaInicial::on_bt_transacoes_clicked()
     janelaGerirTransacao->show();
 }
 
+
+void janelaInicial::on_bt_relatorio_clicked()
+{
+    this->hide();
+    janelaGerirRelatorio = new gerirrelatorio(this, bancoDeDados);
+    janelaGerirRelatorio->show();
+}
+

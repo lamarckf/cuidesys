@@ -8,6 +8,7 @@
 #include "geriradm.h"
 #include "gerirestoque.h"
 #include "gerirtransacao.h"
+#include "gerirrelatorio.h"
 
 
 /*
@@ -35,6 +36,8 @@ private slots:  // Metodos
     void on_bt_estoque_clicked();
 
     void on_bt_transacoes_clicked();
+
+    void on_bt_relatorio_clicked();
 
 private: // Atributos
 
@@ -64,6 +67,8 @@ private: // Atributos
     GerirEstoque* janelaGerirEstoque;
 
     gerirtransacao* janelaGerirTransacao;
+
+    gerirrelatorio* janelaGerirRelatorio;
 
 };
 

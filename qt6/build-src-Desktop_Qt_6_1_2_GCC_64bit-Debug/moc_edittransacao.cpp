@@ -30,24 +30,25 @@ struct qt_meta_stringdata_edittransacao_t {
 static const qt_meta_stringdata_edittransacao_t qt_meta_stringdata_edittransacao = {
     {
 QT_MOC_LITERAL(0, 13), // "edittransacao"
-QT_MOC_LITERAL(14, 40), // "on_transacaoComboBox_currentI..."
-QT_MOC_LITERAL(55, 0), // ""
-QT_MOC_LITERAL(56, 27), // "on_voltarPushButton_clicked"
-QT_MOC_LITERAL(84, 12), // "refreshProds"
-QT_MOC_LITERAL(97, 17), // "refreshTransacoes"
-QT_MOC_LITERAL(115, 22), // "refreshCamposTransacao"
-QT_MOC_LITERAL(138, 12), // "refreshTable"
-QT_MOC_LITERAL(151, 28), // "on_aplicarPushButton_clicked"
-QT_MOC_LITERAL(180, 30), // "on_CadastrarPushButton_clicked"
-QT_MOC_LITERAL(211, 28) // "on_DeletarPushButton_clicked"
+QT_MOC_LITERAL(14, 27), // "on_voltarPushButton_clicked"
+QT_MOC_LITERAL(42, 0), // ""
+QT_MOC_LITERAL(43, 28), // "on_aplicarPushButton_clicked"
+QT_MOC_LITERAL(72, 40), // "on_transacaoComboBox_currentI..."
+QT_MOC_LITERAL(113, 30), // "on_CadastrarPushButton_clicked"
+QT_MOC_LITERAL(144, 28), // "on_DeletarPushButton_clicked"
+QT_MOC_LITERAL(173, 12), // "refreshProds"
+QT_MOC_LITERAL(186, 17), // "refreshTransacoes"
+QT_MOC_LITERAL(204, 22), // "refreshCamposTransacao"
+QT_MOC_LITERAL(227, 12) // "refreshTable"
 
     },
-    "edittransacao\0on_transacaoComboBox_currentIndexChanged\0"
-    "\0on_voltarPushButton_clicked\0refreshProds\0"
-    "refreshTransacoes\0refreshCamposTransacao\0"
-    "refreshTable\0on_aplicarPushButton_clicked\0"
+    "edittransacao\0on_voltarPushButton_clicked\0"
+    "\0on_aplicarPushButton_clicked\0"
+    "on_transacaoComboBox_currentIndexChanged\0"
     "on_CadastrarPushButton_clicked\0"
-    "on_DeletarPushButton_clicked"
+    "on_DeletarPushButton_clicked\0refreshProds\0"
+    "refreshTransacoes\0refreshCamposTransacao\0"
+    "refreshTable"
 };
 #undef QT_MOC_LITERAL
 
@@ -65,9 +66,9 @@ static const uint qt_meta_data_edittransacao[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   68,    2, 0x08,    0 /* Private */,
-       3,    0,   71,    2, 0x08,    2 /* Private */,
-       4,    0,   72,    2, 0x08,    3 /* Private */,
+       1,    0,   68,    2, 0x08,    0 /* Private */,
+       3,    0,   69,    2, 0x08,    1 /* Private */,
+       4,    1,   70,    2, 0x08,    2 /* Private */,
        5,    0,   73,    2, 0x08,    4 /* Private */,
        6,    0,   74,    2, 0x08,    5 /* Private */,
        7,    0,   75,    2, 0x08,    6 /* Private */,
@@ -76,9 +77,9 @@ static const uint qt_meta_data_edittransacao[] = {
       10,    0,   78,    2, 0x08,    9 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void,
-    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -95,15 +96,15 @@ void edittransacao::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         auto *_t = static_cast<edittransacao *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_transacaoComboBox_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 1: _t->on_voltarPushButton_clicked(); break;
-        case 2: _t->refreshProds(); break;
-        case 3: _t->refreshTransacoes(); break;
-        case 4: _t->refreshCamposTransacao(); break;
-        case 5: _t->refreshTable(); break;
-        case 6: _t->on_aplicarPushButton_clicked(); break;
-        case 7: _t->on_CadastrarPushButton_clicked(); break;
-        case 8: _t->on_DeletarPushButton_clicked(); break;
+        case 0: _t->on_voltarPushButton_clicked(); break;
+        case 1: _t->on_aplicarPushButton_clicked(); break;
+        case 2: _t->on_transacaoComboBox_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->on_CadastrarPushButton_clicked(); break;
+        case 4: _t->on_DeletarPushButton_clicked(); break;
+        case 5: _t->refreshProds(); break;
+        case 6: _t->refreshTransacoes(); break;
+        case 7: _t->refreshCamposTransacao(); break;
+        case 8: _t->refreshTable(); break;
         default: ;
         }
     }
@@ -117,7 +118,7 @@ const QMetaObject edittransacao::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_edittransacao_t
 
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,
