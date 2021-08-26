@@ -65,6 +65,11 @@ private slots:
      */
     void refreshTable();
 
+    /*
+     * Verifica as quantidades diponiveis em estoque antes de editar a transacao
+     */
+    bool verificarQuantidades(QString idTransation);
+
 
 
 

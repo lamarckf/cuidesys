@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_cadtransacao_t {
-    const uint offsetsAndSize[16];
-    char stringdata0[149];
+    const uint offsetsAndSize[20];
+    char stringdata0[180];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_cadtransacao_t, stringdata0) + ofs), len 
@@ -36,13 +36,16 @@ QT_MOC_LITERAL(27, 12), // "refreshTable"
 QT_MOC_LITERAL(40, 17), // "on_voltar_clicked"
 QT_MOC_LITERAL(58, 30), // "on_CadastrarPushButton_clicked"
 QT_MOC_LITERAL(89, 28), // "on_DeletarPushButton_clicked"
-QT_MOC_LITERAL(118, 30) // "on_confirmarPushButton_clicked"
+QT_MOC_LITERAL(118, 30), // "on_confirmarPushButton_clicked"
+QT_MOC_LITERAL(149, 20), // "verificarQuantidades"
+QT_MOC_LITERAL(170, 9) // "tipoTrans"
 
     },
     "cadtransacao\0refreshProds\0\0refreshTable\0"
     "on_voltar_clicked\0on_CadastrarPushButton_clicked\0"
     "on_DeletarPushButton_clicked\0"
-    "on_confirmarPushButton_clicked"
+    "on_confirmarPushButton_clicked\0"
+    "verificarQuantidades\0tipoTrans"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,7 +55,7 @@ static const uint qt_meta_data_cadtransacao[] = {
        9,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -60,12 +63,13 @@ static const uint qt_meta_data_cadtransacao[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   50,    2, 0x08,    0 /* Private */,
-       3,    0,   51,    2, 0x08,    1 /* Private */,
-       4,    0,   52,    2, 0x08,    2 /* Private */,
-       5,    0,   53,    2, 0x08,    3 /* Private */,
-       6,    0,   54,    2, 0x08,    4 /* Private */,
-       7,    0,   55,    2, 0x08,    5 /* Private */,
+       1,    0,   56,    2, 0x08,    0 /* Private */,
+       3,    0,   57,    2, 0x08,    1 /* Private */,
+       4,    0,   58,    2, 0x08,    2 /* Private */,
+       5,    0,   59,    2, 0x08,    3 /* Private */,
+       6,    0,   60,    2, 0x08,    4 /* Private */,
+       7,    0,   61,    2, 0x08,    5 /* Private */,
+       8,    1,   62,    2, 0x08,    6 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -74,6 +78,7 @@ static const uint qt_meta_data_cadtransacao[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Bool, QMetaType::QString,    9,
 
        0        // eod
 };
@@ -90,10 +95,11 @@ void cadtransacao::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 3: _t->on_CadastrarPushButton_clicked(); break;
         case 4: _t->on_DeletarPushButton_clicked(); break;
         case 5: _t->on_confirmarPushButton_clicked(); break;
+        case 6: { bool _r = _t->verificarQuantidades((*reinterpret_cast< QString(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject cadtransacao::staticMetaObject = { {
@@ -104,7 +110,7 @@ const QMetaObject cadtransacao::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_cadtransacao_t
 
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<bool, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>
 
 
 >,
@@ -131,13 +137,13 @@ int cadtransacao::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

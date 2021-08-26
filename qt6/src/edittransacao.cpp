@@ -259,6 +259,10 @@ void edittransacao::on_aplicarPushButton_clicked()
         return;
     }
 
+
+    if(!verificarQuantidades(id)) { return; }
+
+
     //Criando Transação no Banco de Dados
     QSqlQuery qry;
     if( qry.exec("UPDATE tb_transation SET vendedor = \'" + vendedor + "\', data = \'" + data + "\' WHERE id =" + id) )
@@ -269,24 +273,129 @@ void edittransacao::on_aplicarPushButton_clicked()
         return;
     }
 
+
     //Criando Produtos ligados a transações no Banco de Dados
     QSqlQuery qry2;
+    qry2.exec("SELECT tipo FROM tb_transation WHERE id =" + id);
+    QString tipoTrans = qry2.value(0).toString();
+    while ( tipoTrans.length() == 0 )
+    {
+        qry2.next();
+        tipoTrans = qry2.value(0).toString();
+    }
+
+
+    //Deletendo valores antigos
+    std::vector<linha>::iterator itr;
+    for(itr = linhas.begin(); itr != linhas.end() ; itr++){
+
+        QString nomeProd = itr->nomeProduto;
+
+
+            qry2.exec("SELECT quantidade FROM tb_produto WHERE prodNome = \'" + nomeProd + "\'");
+
+            if(tipoTrans == "Venda")
+            {
+                QString quantidadeProd = qry2.value(0).toString();
+                while ( quantidadeProd.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeProd = qry2.value(0).toString();
+                }
+
+                qry2.exec("SELECT quantidade FROM tb_transation_produto WHERE idTransation = " + id + " AND prodNome =  \'" + nomeProd + "\'");
+
+                QString quantidadeVenda = qry2.value(0).toString();
+                while ( quantidadeVenda.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeVenda = qry2.value(0).toString();
+                }
+
+
+                QString resultado = QString::number(quantidadeProd.toInt() + quantidadeVenda.toInt());
+                qry2.exec("UPDATE tb_produto SET quantidade =" + resultado  +" WHERE prodNome = \'" + nomeProd+ "\'");
+
+        }
+
+            else{
+                QString quantidadeProd = qry2.value(0).toString();
+                while ( quantidadeProd.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeProd = qry2.value(0).toString();
+                }
+
+                qry2.exec("SELECT quantidade FROM tb_transation_produto WHERE idTransation = " + id + " AND prodNome =  \'" + nomeProd + "\'");
+
+                QString quantidadeCompra = qry2.value(0).toString();
+                while ( quantidadeCompra.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeCompra = qry2.value(0).toString();
+                }
+
+
+                QString resultado = QString::number(quantidadeProd.toInt() - quantidadeCompra.toInt());
+                qry2.exec("UPDATE tb_produto SET quantidade =" + resultado  +" WHERE prodNome = \'" + nomeProd+ "\'");
+            }
+
+
+            //Atualiza as quantidades dos produtos em estoque
+
+
+
+    }
+
+
+
     qry2.exec("DELETE FROM tb_transation_produto WHERE idTransation = " + id);
 
-    std::vector<linha>::iterator itr;
+
+    //Estabelecendo novos valores
     for(itr = linhas.begin(); itr != linhas.end() ; itr++){
 
         QString nomeProd = itr->nomeProduto;
         QString quantidade = itr->quantidade;
 
 
+        //Inserindo itens do carrinho
         if (qry2.exec("INSERT INTO tb_transation_produto (quantidade, idTransation, prodNome) VALUES ( "+ quantidade +", " + id +", \'"+ nomeProd +"\')") )
-        {}
+        {
+
+            //Atualiza as quantidades dos produtos em estoque
+            qry2.exec("SELECT quantidade FROM tb_produto WHERE prodNome = \'" + nomeProd + "\'");
+            if(tipoTrans == "Venda")
+            {
+                QString quantidadeProd = qry2.value(0).toString();
+                while ( quantidadeProd.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeProd = qry2.value(0).toString();
+                }
+
+                QString resultado = QString::number(quantidadeProd.toInt() -  quantidade.toInt());
+                qry2.exec("UPDATE tb_produto SET quantidade = " + resultado  + " WHERE prodNome = \'" + nomeProd + "\'");
+            }
+            else{
+
+                QString quantidadeProd = qry2.value(0).toString();
+                while ( quantidadeProd.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeProd = qry2.value(0).toString();
+                }
+                QString resultado = QString::number(quantidadeProd.toInt() +  quantidade.toInt());
+                qry2.exec("UPDATE tb_produto SET quantidade = " + resultado + " WHERE prodNome = \'" + nomeProd + "\'");
+            }
+
+        }
         else
         {
-            ui->resultLabel->setText("Não possivel adicionar novamente um dos produtos.");
+            ui->resultLabel->setText("Não possivel adicionar um dos produtos.");
             return;
         }
+
 
     }
 
@@ -415,3 +524,93 @@ void edittransacao::on_DeletarPushButton_clicked()
     ui->prodSpinBoxDel->setValue(1);
 }
 
+bool edittransacao::verificarQuantidades(QString idTransation){
+
+    //Criando Produtos ligados a transações no Banco de Dados
+    QSqlQuery qry2;
+
+    std::vector<linha>::iterator itr;
+    for(itr = linhas.begin(); itr != linhas.end() ; itr++){
+
+        QString nomeProd = itr->nomeProduto;
+        QString quantidade = itr->quantidade;
+
+        //Atualiza as quantidades dos produtos em estoque
+        qry2.exec("SELECT tipo FROM tb_transation WHERE id =" + idTransation);
+        QString tipoTrans = qry2.value(0).toString();
+        while ( tipoTrans.length() == 0 )
+        {
+            qry2.next();
+            tipoTrans = qry2.value(0).toString();
+        }
+
+
+            //Atualiza as quantidades dos produtos em estoque
+            qry2.exec("SELECT quantidade FROM tb_produto WHERE prodNome = \'" + nomeProd + "\'");
+
+            if(tipoTrans == "Venda")
+            {
+                QString quantidadeProd = qry2.value(0).toString();
+                while ( quantidadeProd.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeProd = qry2.value(0).toString();
+                }
+
+                qry2.exec("SELECT quantidade FROM tb_transation_produto WHERE idTransation = " + idTransation + " AND prodNome =  \'" + nomeProd + "\'");
+
+                QString quantidadeVenda = qry2.value(0).toString();
+                while ( quantidadeVenda.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeVenda = qry2.value(0).toString();
+                }
+
+
+                QString resultado = QString::number(quantidadeProd.toInt() + quantidadeVenda.toInt() -  quantidade.toInt());
+
+                //Veritica se ainda há itens disponivei em estoque
+                if(resultado.toInt() < 0)
+                {
+                    ui->resultLabel->setText("Não possivel confirmar, produto \'" + nomeProd + "\' insuficiente em estoque. (1) ");
+                    return false;
+                }
+
+        }
+
+            else{
+                QString quantidadeProd = qry2.value(0).toString();
+                while ( quantidadeProd.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeProd = qry2.value(0).toString();
+                }
+
+                qry2.exec("SELECT quantidade FROM tb_transation_produto WHERE idTransation = " + idTransation + " AND prodNome =  \'" + nomeProd + "\'");
+
+                QString quantidadeCompra = qry2.value(0).toString();
+                while ( quantidadeCompra.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeCompra = qry2.value(0).toString();
+                }
+
+
+                QString resultado = QString::number(quantidadeProd.toInt() - quantidadeCompra.toInt() +  quantidade.toInt());
+
+                //Veritica se ainda há itens disponivei em estoque
+                if(resultado.toInt() < 0)
+                {
+                    ui->resultLabel->setText("Não possivel confirmar, produto \'" + nomeProd + "\' terá um valor inconsistente em estoque. (1) ");
+                    return false;
+                }
+            }
+
+
+
+
+    }
+
+
+    return true;
+}

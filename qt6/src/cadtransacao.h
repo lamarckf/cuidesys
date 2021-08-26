@@ -53,6 +53,11 @@ private slots:
      */
     void on_confirmarPushButton_clicked();
 
+    /*
+     * Verifica as quantidades diponiveis em estoque antes de efetuar a transacao
+     */
+    bool verificarQuantidades( QString tipoTrans);
+
 
 private:
     Ui::cadtransacao *ui;

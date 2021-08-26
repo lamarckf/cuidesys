@@ -245,6 +245,9 @@ void cadtransacao::on_confirmarPushButton_clicked()
         return;
     }
 
+    //verifica quantidades em estoque
+    if(!verificarQuantidades(tipoTrans)) { return; }
+
 
     //Criando Transação no Banco de Dados
     QSqlQuery qry;
@@ -257,14 +260,15 @@ void cadtransacao::on_confirmarPushButton_clicked()
         return;
     }
 
+
+
     //Criando Produtos ligados a transações no Banco de Dados
     QSqlQuery qry2;
     qry2.exec("SELECT last_insert_rowid()");
     QString idTransation = qry2.value(0).toString();
+
     //Lê todas as querys ate encontrar o id a ultima transação adicionada
-    while(qry2.next() && idTransation.length() == 0){
-        idTransation = qry2.value(0).toString();
-    };
+    while(qry2.next() && idTransation.length() == 0){ idTransation = qry2.value(0).toString(); };
 
 
     std::vector<linha>::iterator itr;
@@ -273,9 +277,37 @@ void cadtransacao::on_confirmarPushButton_clicked()
         QString nomeProd = itr->nomeProduto;
         QString quantidade = itr->quantidade;
 
-
+        //Inserindo itens do carrinho
         if (qry2.exec("INSERT INTO tb_transation_produto (quantidade, idTransation, prodNome) VALUES ( "+ quantidade +", " + idTransation +", \'"+ nomeProd +"\')") )
-        {}
+        {
+
+            //Atualiza as quantidades dos produtos em estoque
+            qry2.exec("SELECT quantidade FROM tb_produto WHERE prodNome = \'" + nomeProd + "\'");
+            if(tipoTrans == "Venda")
+            {
+                QString quantidadeProd = qry2.value(0).toString();
+                while ( quantidadeProd.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeProd = qry2.value(0).toString();
+                }
+
+                QString resultado = QString::number(quantidadeProd.toInt() -  quantidade.toInt());
+                qry2.exec("UPDATE tb_produto SET quantidade = " + resultado  + " WHERE prodNome = \'" + nomeProd + "\'");
+            }
+            else{
+
+                QString quantidadeProd = qry2.value(0).toString();
+                while ( quantidadeProd.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeProd = qry2.value(0).toString();
+                }
+                QString resultado = QString::number(quantidadeProd.toInt() +  quantidade.toInt());
+                qry2.exec("UPDATE tb_produto SET quantidade = " + resultado + " WHERE prodNome = \'" + nomeProd + "\'");
+            }
+
+        }
         else
         {
             ui->resultLabel->setText("Não possivel adicionar um dos produtos.");
@@ -295,3 +327,50 @@ void cadtransacao::on_confirmarPushButton_clicked()
 
 }
 
+
+bool cadtransacao::verificarQuantidades( QString tipoTrans){
+
+    //Criando Produtos ligados a transações no Banco de Dados
+    QSqlQuery qry2;
+
+    std::vector<linha>::iterator itr;
+    for(itr = linhas.begin(); itr != linhas.end() ; itr++){
+
+        QString nomeProd = itr->nomeProduto;
+        QString quantidade = itr->quantidade;
+
+
+
+            //Atualiza as quantidades dos produtos em estoque
+            qry2.exec("SELECT quantidade FROM tb_produto WHERE prodNome = \'" + nomeProd + "\'");
+
+            if(tipoTrans == "Venda")
+            {
+                QString quantidadeProd = qry2.value(0).toString();
+                while ( quantidadeProd.length() == 0 )
+                {
+                    qry2.next();
+                    quantidadeProd = qry2.value(0).toString();
+                }
+
+                QString resultado = QString::number(quantidadeProd.toInt() -  quantidade.toInt());
+
+                //Veritica se ainda há itens disponivei em estoque
+                if(resultado.toInt() < 0)
+                {
+                    ui->resultLabel->setText("Não possivel confirmar, produto \'" + nomeProd + "\' insuficiente em estoque. (1) ");
+                    return false;
+                }
+
+        }
+
+
+
+
+
+
+    }
+
+
+    return true;
+}
