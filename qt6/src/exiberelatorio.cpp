@@ -181,9 +181,9 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
 
             if( quantidade.toInt() > quantidade_max ){
                 quantidade_max = quantidade.toInt();
-                ui->tableWidget->setItem(l,0, nomeItm);
-                ui->tableWidget->setItem(l,1, quantidadeItm);
-                ui->tableWidget->setItem(l,2, precoItr);
+                ui->tableWidget->setItem(0,0, nomeItm);
+                ui->tableWidget->setItem(0,1, quantidadeItm);
+                ui->tableWidget->setItem(0,2, precoItr);
             }
 
             l++;
@@ -204,6 +204,59 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
         auto header = this->ui->tableWidget->horizontalHeader();
         header->setSectionResizeMode(QHeaderView::Stretch);
         ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+        //Exibe relatório
+        QSqlQuery qry;
+        qry.exec("SELECT COUNT(*) FROM view_lucro_vendedores");
+        QString n_vendedores = qry.value(0).toString();
+        while( n_vendedores.length() == 0){
+            qry.next();
+            n_vendedores = qry.value(0).toString();
+        }
+
+        this->ui->tableWidget->setRowCount(1);
+
+
+        qry.exec("SELECT * FROM view_lucro_vendedores");
+        int l = 0;
+        int quantidade_max = -1;
+        QTableWidgetItem* nomeItm;
+        QTableWidgetItem* quantidadeItm;
+        QTableWidgetItem* precoItr;
+        while(qry.next()  &&  l < n_vendedores.toInt() ){
+
+            if (qry.value(0).toString().length() == 0){
+                continue;
+            }
+
+            QString nome = qry.value(0).toString();
+            QString quantidade = qry.value(1).toString();
+            QString preco = qry.value(2).toString();
+            nomeItm = new QTableWidgetItem(nome);
+            quantidadeItm = new QTableWidgetItem(quantidade);
+            precoItr = new QTableWidgetItem(preco);
+
+            if( quantidade.toInt() > quantidade_max ){
+                quantidade_max = quantidade.toInt();
+
+                ui->tableWidget->setItem(0,0, nomeItm);
+                ui->tableWidget->setItem(0,1, quantidadeItm);
+                ui->tableWidget->setItem(0,2, precoItr);
+
+
+
+            }
+            l++;
+
+        }
+
+
+
+
+
+
+
+
     }else if(*tipo== "Todos os vendedores")
     {
         this->ui->tableWidget->setColumnCount(3);
@@ -216,6 +269,42 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
         auto header = this->ui->tableWidget->horizontalHeader();
         header->setSectionResizeMode(QHeaderView::Stretch);
         ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+        //SELECT COUNT(*) FROM view_lucro_vendedores
+
+        //Exibe relatório
+        QSqlQuery qry;
+        qry.exec("SELECT COUNT(*) FROM view_lucro_vendedores");
+        QString n_vendedores = qry.value(0).toString();
+        while( n_vendedores.length() == 0){
+            qry.next();
+            n_vendedores = qry.value(0).toString();
+        }
+
+        this->ui->tableWidget->setRowCount(n_vendedores.toInt());
+
+        qry.exec("SELECT * FROM view_lucro_vendedores ");
+        int l = 0;
+        while(qry.next()  &&  l < n_vendedores.toInt() ){
+
+            if (qry.value(0).toString().length() == 0){
+                continue;
+            }
+
+            QTableWidgetItem* nome = new QTableWidgetItem(qry.value(0).toString());
+            ui->tableWidget->setItem(l,0, nome);
+
+            QTableWidgetItem* quantidade = new QTableWidgetItem(qry.value(1).toString());
+            ui->tableWidget->setItem(l,1, quantidade);
+
+            QTableWidgetItem* lucro = new QTableWidgetItem(qry.value(2).toString());
+            ui->tableWidget->setItem(l,2, lucro);
+
+            l++;
+        }
+
+
+
 
 
         //this->ui->tableWidget->setRowCount(tem que somar o numero de vendedores);
