@@ -28,6 +28,59 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
         auto header = this->ui->tableWidget->horizontalHeader();
         header->setSectionResizeMode(QHeaderView::Stretch);
 
+        //Exibe relatório
+        QSqlQuery qry;
+        qDebug() << "SELECT COUNT(*) FROM tb_transation WHERE " + *transacaoInicio + "<= id AND id <=" + *transacaoFim;
+        qry.exec("SELECT COUNT(*) FROM tb_transation WHERE " + *transacaoInicio + "<= id AND id <=" + *transacaoFim);
+        QString n_transacoes = qry.value(0).toString();
+        while( n_transacoes.length() == 0){
+            qDebug() << "Hello Man";
+            qry.next();
+            n_transacoes = qry.value(0).toString();
+        }
+
+        this->ui->tableWidget->setRowCount(n_transacoes.toInt());
+
+
+
+        qry.exec("SELECT id, tipo FROM tb_transation WHERE " + *transacaoInicio + "<= id AND id <=" + *transacaoFim);
+        int l = 0;
+        while(qry.next()  &&  l < n_transacoes.toInt() ){
+
+            if (qry.value(0).toString().length() == 0){
+                continue;
+            }
+
+            QTableWidgetItem* id = new QTableWidgetItem(qry.value(0).toString());
+            ui->tableWidget->setItem(l,0, id);
+
+            QTableWidgetItem* tipo = new QTableWidgetItem(qry.value(1).toString());
+            ui->tableWidget->setItem(l,1, tipo);
+
+
+
+            QSqlQuery qry2;
+            qDebug() << "SELECT SUM(quantidade*preco) FROM view_qry_hist_trans WHERE id = " + qry.value(0).toString();
+            qry2.exec("SELECT SUM(quantidade*preco) FROM view_qry_hist_trans WHERE id = " + qry.value(0).toString());
+            QString valor = qry2.value(0).toString();
+
+            while( valor.length() == 0){
+                qry2.next();
+                valor = qry2.value(0).toString();
+            }
+
+            if (qry.value(1).toString() == "Compra"){ valor = "-" +valor; }
+
+            QTableWidgetItem* valorItn = new QTableWidgetItem(valor);
+            ui->tableWidget->setItem(l,2, valorItn);
+
+
+            l++;
+        }
+        //SELECT SUM(quantidade*preco) FROM view_qry_hist_trans WHERE id = 19
+
+
+
 
     }
     else if(*tipo=="Produtos em estoque")
@@ -43,7 +96,37 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
         header->setSectionResizeMode(QHeaderView::Stretch);
 
 
-        //this->ui->tableWidget->setRowCount(Tem que contar os produtos em estoque);
+        //Exibe relatório
+        QSqlQuery qry;
+        qry.exec("SELECT COUNT(*) FROM tb_produto");
+        QString n_produtos = qry.value(0).toString();
+        while( n_produtos.length() == 0){
+            qry.next();
+            n_produtos = qry.value(0).toString();
+        }
+
+        this->ui->tableWidget->setRowCount(n_produtos.toInt());
+
+        qry.exec("SELECT * FROM tb_produto");
+        int l = 0;
+        while(qry.next()  &&  l < n_produtos.toInt() ){
+
+            if (qry.value(0).toString().length() == 0){
+                continue;
+            }
+
+            QTableWidgetItem* nome = new QTableWidgetItem(qry.value(0).toString());
+            ui->tableWidget->setItem(l,0, nome);
+
+            QTableWidgetItem* quantidade = new QTableWidgetItem(qry.value(1).toString());
+            ui->tableWidget->setItem(l,1, quantidade);
+
+            QTableWidgetItem* preco = new QTableWidgetItem(qry.value(2).toString());
+            ui->tableWidget->setItem(l,2, preco);
+
+            l++;
+        }
+
 
     }
     else if(*tipo== "Produto mais vendido")
