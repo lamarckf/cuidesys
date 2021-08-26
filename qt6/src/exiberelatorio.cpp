@@ -27,6 +27,7 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
         this->ui->tableWidget->setRowCount(fim-inicio+1);
         auto header = this->ui->tableWidget->horizontalHeader();
         header->setSectionResizeMode(QHeaderView::Stretch);
+        ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
         //Exibe relatório
         QSqlQuery qry;
@@ -69,7 +70,8 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
                 valor = qry2.value(0).toString();
             }
 
-            if (qry.value(1).toString() == "Compra"){ valor = "-" +valor; }
+            if (qry.value(1).toString() == "Compra"){ valor = "- R$" +valor; }
+            else{ valor = " R$" +valor; }
 
             QTableWidgetItem* valorItn = new QTableWidgetItem(valor);
             ui->tableWidget->setItem(l,2, valorItn);
@@ -94,6 +96,7 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
         this->ui->tableWidget->setHorizontalHeaderLabels(headersLabel);
         auto header = this->ui->tableWidget->horizontalHeader();
         header->setSectionResizeMode(QHeaderView::Stretch);
+        ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
 
         //Exibe relatório
@@ -141,6 +144,53 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
         this->ui->tableWidget->setRowCount(1);
         auto header = this->ui->tableWidget->horizontalHeader();
         header->setSectionResizeMode(QHeaderView::Stretch);
+        ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+        //Exibe relatório
+        QSqlQuery qry;
+        qry.exec("SELECT COUNT(*) FROM view_soma_quantidade");
+        QString n_produtos = qry.value(0).toString();
+        while( n_produtos.length() == 0){
+            qry.next();
+            n_produtos = qry.value(0).toString();
+        }
+
+        this->ui->tableWidget->setRowCount(1);
+
+
+        qry.exec("SELECT * FROM view_soma_quantidade");
+        int l = 0;
+        int quantidade_max = -1;
+        while(qry.next()  &&  l < n_produtos.toInt() ){
+
+            if (qry.value(0).toString().length() == 0){
+                continue;
+            }
+
+            QString nome = qry.value(0).toString();
+            QTableWidgetItem* nomeItm = new QTableWidgetItem(nome);
+
+
+            QString quantidade = qry.value(1).toString();
+            QTableWidgetItem* quantidadeItm = new QTableWidgetItem(quantidade);
+
+
+            QString preco = qry.value(2).toString();
+            QTableWidgetItem* precoItr = new QTableWidgetItem(preco);
+
+
+            if( quantidade.toInt() > quantidade_max ){
+                quantidade_max = quantidade.toInt();
+                ui->tableWidget->setItem(l,0, nomeItm);
+                ui->tableWidget->setItem(l,1, quantidadeItm);
+                ui->tableWidget->setItem(l,2, precoItr);
+            }
+
+            l++;
+        }
+
+
+
     }else if(*tipo== "Melhor vendedor")
     {
         this->ui->tableWidget->setColumnCount(3);
@@ -153,6 +203,7 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
         this->ui->tableWidget->setRowCount(1);
         auto header = this->ui->tableWidget->horizontalHeader();
         header->setSectionResizeMode(QHeaderView::Stretch);
+        ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     }else if(*tipo== "Todos os vendedores")
     {
         this->ui->tableWidget->setColumnCount(3);
@@ -164,6 +215,7 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
         this->ui->tableWidget->setHorizontalHeaderLabels(headersLabel);
         auto header = this->ui->tableWidget->horizontalHeader();
         header->setSectionResizeMode(QHeaderView::Stretch);
+        ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
 
         //this->ui->tableWidget->setRowCount(tem que somar o numero de vendedores);
@@ -181,6 +233,7 @@ exiberelatorio::exiberelatorio(QWidget *parent, QSqlDatabase *bd, QString *type,
         this->ui->tableWidget->setRowCount(1);
         auto header = this->ui->tableWidget->horizontalHeader();
         header->setSectionResizeMode(QHeaderView::Stretch);
+        ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     }
 }
 
